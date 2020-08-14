@@ -2,16 +2,26 @@
 
 ## Table of Contents
 
+- [Vector3](vector3)
+  - [Basics](#basics) 
 - [Physics](#physics)
   - [Move Object](#move-object) 
   - [Rotate Object](#rotate-object) 
 - [Input](#input)
   - [Keyboard](#keyboard) 
   - [Mouse](#mouse) 
-- [Vector3](vector3)
-  - [Basics](#basics) 
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton) 
+
+## Vector3
+
+### Basics
+
+```csharp
+// Vector3 is representation of 3D vectors and points, used to represent 3D positions,considering x,y & z axis.
+
+Vector3 v = new Vector3(0f, 0f, 0f);
+```
 
 ## Physics
 
@@ -131,14 +141,3 @@ public class AnotherClass: MonoBehaviour {
     }
 }
 ```
-
-## Vector3
-
-### Basics
-
-```csharp
-// Vector3 is representation of 3D vectors and points, used to represent 3D positions,considering x,y & z axis.
-
-Vector3 v = new Vector3(0f, 0f, 0f);
-```
-
