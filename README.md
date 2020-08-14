@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+- [Input](#input)
+  - [Keyboard](#keyboard) 
+  - [Mouse](#mouse) 
 - [Physics](#physics)
   - [Move Object](#move-object) 
   - [Rotate Object](#rotate-object) 
@@ -53,5 +56,45 @@ transform.Rotate(rotx, roty, rotz);
 // those values are not stored in the rotation. Instead, the X, Y & Z values are converted to the Quaternion's internal format.
 
 transform.eulerAngles = Vector3(rotx, roty, rotz);
+```
+
+## Input
+
+### Keyboard
+
+```csharp
+// Returns true during the frame the user starts pressing down the key
+if (Input.GetKeyDown(KeyCode.Space)) {
+    Debug.Log("Space key was pressed");
+}
+
+// Jump is also set to space in Input Manager
+if (Input.GetButtonDown("Jump")) {
+    Debug.Log("Do something");
+}
+```
+
+### Mouse
+
+```csharp
+if (Input.GetAxis("Mouse X") < 0) {
+    Debug.Log("Mouse moved left");
+}
+
+if (Input.GetAxis("Mouse Y") > 0) {
+    Debug.Log("Mouse moved up");
+}
+
+if (Input.GetMouseButtonDown(0)) {
+    Debug.Log("Pressed primary button.");
+}
+
+if (Input.GetMouseButtonDown(1)) {
+    Debug.Log("Pressed secondary button.");
+}
+
+if (Input.GetMouseButtonDown(2)) {
+    Debug.Log("Pressed middle click.");
+}
 ```
 
