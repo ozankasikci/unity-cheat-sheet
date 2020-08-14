@@ -11,7 +11,7 @@
   - [Keyboard](#keyboard) 
   - [Mouse](#mouse) 
 - [Audio](#audio)
-  - [Play from ](#keyboard) 
+  - [Basic Audio Play](#basic-audio-play) 
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton) 
 - [Practical Use Cases](#practical-use-cases)
@@ -115,6 +115,22 @@ if (Input.GetMouseButtonDown(2)) {
     Debug.Log("Pressed middle click.");
 }
 ```
+
+## Audio
+
+### Basic Audio Play
+
+```csharp
+public class PlayAudio : MonoBehaviour {
+    public AudioSource audioSource;
+
+    void Start() {
+        // Calling Play on an Audio Source that is already playing will make it start from the beginning
+        audioSource.Play();
+    }
+}
+```
+
 
 ## Design Patterns
 
