@@ -59,7 +59,7 @@ transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
 ```
 
 ```csharp
-// Applies rotation around all the given axises.
+// Applies rotation around all the given axes.
 
 transform.Rotate(rotx, roty, rotz);
 ```
