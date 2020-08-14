@@ -8,6 +8,8 @@
 - [Physics](#physics)
   - [Move Object](#move-object) 
   - [Rotate Object](#rotate-object) 
+- [Design Patterns](#design-patterns)
+  - [Singleton](#singleton) 
 
 ## Physics
 
@@ -98,3 +100,22 @@ if (Input.GetMouseButtonDown(2)) {
 }
 ```
 
+## Design Patterns
+
+### Singleton
+
+```csharp
+public class SomeClass : MonoBehaviour {
+    private static SomeClass instance;
+
+    public static SomeClass Instance { get { return instance; } }
+
+    private void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+        } else {
+            instance = this;
+        }
+    }
+}
+```
