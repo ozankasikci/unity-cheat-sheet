@@ -34,14 +34,24 @@ transform.position = Vector3.Lerp(transform.position, targetPosition, t);
 
 ### Rotate Object 
 ```csharp
+// A Quaternion stores the rotation of the Transform in world space.
+// Quaternions are based on complex numbers and don't suffer from gimbal lock.
+// Unity internally uses Quaternions to represent all rotations.
+
 transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
 ```
 
 ```csharp
+// Applies rotation around all the given axises.
+
 transform.Rotate(rotx, roty, rotz);
 ```
 
 ```csharp
+// Transform.eulerAngles represents rotation in world space. 
+// It is important to understand that although you are providing X, Y, and Z rotation values to describe your rotation
+// those values are not stored in the rotation. Instead, the X, Y & Z values are converted to the Quaternion's internal format.
+
 transform.eulerAngles = Vector3(rotx, roty, rotz);
 ```
 
