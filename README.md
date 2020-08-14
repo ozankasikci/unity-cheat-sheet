@@ -105,7 +105,8 @@ if (Input.GetMouseButtonDown(2)) {
 ### Singleton
 
 ```csharp
-public class SomeClass : MonoBehaviour {
+// Define singleton class
+public class SingletonClass: MonoBehaviour {
     private static SomeClass instance;
 
     public static SomeClass Instance { get { return instance; } }
@@ -116,6 +117,15 @@ public class SomeClass : MonoBehaviour {
         } else {
             instance = this;
         }
+    }
+}
+
+// Use it in another class
+public class AnotherClass: MonoBehaviour {
+    public Singleton instance;
+
+    private void Awake() {
+       instance = Singleton.Instance;
     }
 }
 ```
