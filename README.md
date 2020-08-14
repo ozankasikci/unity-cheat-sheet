@@ -13,6 +13,7 @@
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton) 
 - [Practical Use Cases](#practical-use-cases)
+  - [Check if object is on the ground](#check-if-object-is-on-the-ground) 
 
 ## Vector3
 
