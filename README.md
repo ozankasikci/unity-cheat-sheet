@@ -16,6 +16,7 @@
   - [Singleton](#singleton) 
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground) 
+  - [Get transform of a Body Bone](#get-transform-of-a-body-bone) 
 
 ## Vector3
 
@@ -175,3 +176,10 @@ if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.5f)) {
 }
 ```
 
+### Get transform of a Body Bone
+
+```csharp
+Animator animator;
+
+Transform transform = animator.GetBoneTransform(HumanBodyBones.Head);
+```
