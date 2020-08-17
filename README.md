@@ -17,7 +17,7 @@
   - [Singleton](#singleton) 
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground) 
-  - [Get transform of a Body Bone](#get-the-transform-of-a-body-bone) 
+  - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone) 
 
 ## Vector3
 
