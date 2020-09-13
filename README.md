@@ -11,6 +11,7 @@
     - [Transform.eulerAngles](#transformeulerangles)
     - [Transform.Rotate()](#transformrotate)
     - [Transform.Lookat()](#transformlookat)
+    - [Quaternion.LookRotation()](#quaternionlookrotation)
   - [Raycast](#raycast)
 - [Input](#input)
   - [Keyboard](#keyboard)
@@ -81,6 +82,8 @@ transform.eulerAngles = Vector3(rotx, roty, rotz);
 #### Transform.Rotate()
 ```csharp
 // Applies rotation around all the given axes.
+public void Rotate(Vector3 eulers, Space relativeTo = Space.Self);
+public void Rotate(float xAngle, float yAngle, float zAngle, Space relativeTo = Space.Self);
 
 transform.Rotate(rotx, roty, rotz);
 ```
@@ -88,6 +91,8 @@ transform.Rotate(rotx, roty, rotz);
 #### Transform.LookAt()
 ```csharp
 // Points the positive 'Z' (forward) side of an object at a position in world space.
+public void LookAt(Transform target);
+public void LookAt(Transform target, Vector3 worldUp = Vector3.up);
 
 // Rotate the object's forward vector to point at the target Transform.
 Transform target;
@@ -95,6 +100,16 @@ transform.LookAt(target);
 
 // Same as above, but setting the worldUp parameter to Vector3.left in this example turns the object on its side.
 transform.LookAt(target, Vector3.left);
+```
+
+#### Quaternion.LookRotation()
+```csharp
+// Creates a rotation with the specified forward and upwards directions.
+public static Quaternion LookRotation(Vector3 forward, Vector3 upwards = Vector3.up);
+
+Vector3 relativePos = target.position - transform.position;
+Quaternion rotation = Quaternion.LookRotation(relativePos);
+transform.rotation = rotation;
 ```
 
 
