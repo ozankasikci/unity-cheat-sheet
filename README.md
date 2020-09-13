@@ -6,6 +6,9 @@
   - [Basics](#basics)
 - [Physics](#physics)
   - [Move Object](#move-object)
+    - [Transform.Translate()](#transformtranslate)
+    - [Vector3.MoveTowards()](#vector3movetowards)
+    - [Vector3.Lerp()](#vector3lerp)
   - [Rotate Object](#rotate-object)
     - [Transform.rotation](#transformrotation)
     - [Transform.eulerAngles](#transformeulerangles)
@@ -38,21 +41,28 @@ Vector3 v = new Vector3(0f, 0f, 0f);
 ## Physics
 
 ### Move Object
+#### Transform.Translate()
 ```csharp
 // Moves the transform in the direction and distance of translation.
+public void Translate(Vector3 translation);
+public void Translate(Vector3 translation, Space relativeTo = Space.Self);
 
 transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
 ```
 
+#### Vector3.MoveTowards()
 ```csharp
 // Calculate a position between the points specified by current and target
 // Moving no farther than the distance specified by maxDistanceDelta
+public static Vector3 MoveTowards(Vector3 current, Vector3 target, float maxDistanceDelta);
 
 Vector3 targetPosition;
 transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime);
 ```
 
+#### Vector3.Lerp()
 ```csharp
+public static Vector3 Lerp(Vector3 startValue, Vector3 endValue, float interpolationRatio);
 // Linearly interpolates between two points. Results in a smooth transition.
 
 Vector3 targetPosition;
