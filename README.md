@@ -7,9 +7,10 @@
 - [Physics](#physics)
   - [Move Object](#move-object)
   - [Rotate Object](#rotate-object)
-    - [transform.rotation](#transformrotation)
-    - [transform.eulerAngles](#transformeulerangles)
-    - [transform.Rotate](#transformrotate)
+    - [Transform.rotation](#transformrotation)
+    - [Transform.eulerAngles](#transformeulerangles)
+    - [Transform.Rotate()](#transformrotate)
+    - [Transform.Lookat()](#transformlookat)
   - [Raycast](#raycast)
 - [Input](#input)
   - [Keyboard](#keyboard)
@@ -82,6 +83,18 @@ transform.eulerAngles = Vector3(rotx, roty, rotz);
 // Applies rotation around all the given axes.
 
 transform.Rotate(rotx, roty, rotz);
+```
+
+#### Transform.LookAt()
+```csharp
+// Points the positive 'Z' (forward) side of an object at a position in world space.
+
+// Rotate the object's forward vector to point at the target Transform.
+Transform target;
+transform.LookAt(target);
+
+// Same as above, but setting the worldUp parameter to Vector3.left in this example turns the object on its side.
+transform.LookAt(target, Vector3.left);
 ```
 
 
