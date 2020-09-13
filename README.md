@@ -63,6 +63,7 @@ transform.position = Vector3.MoveTowards(transform.position, targetPosition, Tim
 
 #### Vector3.Lerp()
 ```csharp
+public static Vector3 Lerp(Vector3 startValue, Vector3 endValue, float interpolationRatio);
 // Linearly interpolates between two points. Results in a smooth transition.
 public static Vector3 Lerp(Vector3 startValue, Vector3 endValue, float interpolationRatio);
 
