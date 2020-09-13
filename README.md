@@ -6,6 +6,9 @@
   - [Basics](#basics)
 - [Physics](#physics)
   - [Move Object](#move-object)
+    - [Transform.Translate()](#transformtranslate)
+    - [Vector3.MoveTowards()](#vector3movetowards)
+    - [Vector3.Lerp()](#vector3lerp)
   - [Rotate Object](#rotate-object)
     - [Transform.rotation](#transformrotation)
     - [Transform.eulerAngles](#transformeulerangles)
@@ -13,6 +16,7 @@
     - [Transform.Lookat()](#transformlookat)
     - [Quaternion.LookRotation()](#quaternionlookrotation)
     - [Quaternion.FromToRotation()](#quaternionfromtorotation)
+    - [Quaternion.ToAngleAxis()](#quaterniontoangleaxis)
   - [Raycast](#raycast)
 - [Input](#input)
   - [Keyboard](#keyboard)
@@ -38,22 +42,29 @@ Vector3 v = new Vector3(0f, 0f, 0f);
 ## Physics
 
 ### Move Object
+#### Transform.Translate()
 ```csharp
 // Moves the transform in the direction and distance of translation.
+public void Translate(Vector3 translation);
+public void Translate(Vector3 translation, Space relativeTo = Space.Self);
 
 transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
 ```
 
+#### Vector3.MoveTowards()
 ```csharp
 // Calculate a position between the points specified by current and target
 // Moving no farther than the distance specified by maxDistanceDelta
+public static Vector3 MoveTowards(Vector3 current, Vector3 target, float maxDistanceDelta);
 
 Vector3 targetPosition;
 transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime);
 ```
 
+#### Vector3.Lerp()
 ```csharp
 // Linearly interpolates between two points. Results in a smooth transition.
+public static Vector3 Lerp(Vector3 startValue, Vector3 endValue, float interpolationRatio);
 
 Vector3 targetPosition;
 float t = 0;
@@ -121,6 +132,18 @@ public static Quaternion FromToRotation(Vector3 fromDirection, Vector3 toDirecti
 
 // Sets the rotation so that the transform's y-axis goes along the z-axis.
 transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.forward);
+```
+
+#### Quaternion.ToAngleAxis()
+```csharp
+// Converts a rotation to angle-axis representation (angles in degrees).
+// In other words, extracts the angle as well as the axis that this quaternion represents.
+public void ToAngleAxis(out float angle, out Vector3 axis);
+
+// Extracts the angle - axis rotation from the transform rotation
+float angle = 0.0f;
+Vector3 axis = Vector3.zero;
+transform.rotation.ToAngleAxis(out angle, out axis);
 ```
 
 ### Raycast
