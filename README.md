@@ -3,21 +3,24 @@
 ## Table of Contents
 
 - [Vector3](vector3)
-  - [Basics](#basics) 
+  - [Basics](#basics)
 - [Physics](#physics)
-  - [Move Object](#move-object) 
-  - [Rotate Object](#rotate-object) 
-  - [Raycast](#raycast) 
+  - [Move Object](#move-object)
+  - [Rotate Object](#rotate-object)
+    - [transform.rotation](#transformrotation)
+    - [transform.eulerAngles](#transformeulerangles)
+    - [transform.Rotate](#transformrotate)
+  - [Raycast](#raycast)
 - [Input](#input)
-  - [Keyboard](#keyboard) 
-  - [Mouse](#mouse) 
+  - [Keyboard](#keyboard)
+  - [Mouse](#mouse)
 - [Audio](#audio)
-  - [Basic Audio Play](#basic-audio-play) 
+  - [Basic Audio Play](#basic-audio-play)
 - [Design Patterns](#design-patterns)
-  - [Singleton](#singleton) 
+  - [Singleton](#singleton)
 - [Practical Use Cases](#practical-use-cases)
-  - [Check if object is on the ground](#check-if-object-is-on-the-ground) 
-  - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone) 
+  - [Check if object is on the ground](#check-if-object-is-on-the-ground)
+  - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
 
 ## Vector3
 
@@ -31,7 +34,7 @@ Vector3 v = new Vector3(0f, 0f, 0f);
 
 ## Physics
 
-### Move Object 
+### Move Object
 ```csharp
 // Moves the transform in the direction and distance of translation.
 
@@ -55,7 +58,8 @@ t += Time.deltaTime * speed;
 transform.position = Vector3.Lerp(transform.position, targetPosition, t);
 ```
 
-### Rotate Object 
+### Rotate Object
+#### Transform.rotation
 ```csharp
 // A Quaternion stores the rotation of the Transform in world space.
 // Quaternions are based on complex numbers and don't suffer from gimbal lock.
@@ -64,12 +68,7 @@ transform.position = Vector3.Lerp(transform.position, targetPosition, t);
 transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
 ```
 
-```csharp
-// Applies rotation around all the given axes.
-
-transform.Rotate(rotx, roty, rotz);
-```
-
+#### Transform.eulerAngles
 ```csharp
 // Transform.eulerAngles represents rotation in world space. 
 // It is important to understand that although you are providing X, Y, and Z rotation values to describe your rotation
@@ -77,6 +76,14 @@ transform.Rotate(rotx, roty, rotz);
 
 transform.eulerAngles = Vector3(rotx, roty, rotz);
 ```
+
+#### Transform.Rotate()
+```csharp
+// Applies rotation around all the given axes.
+
+transform.Rotate(rotx, roty, rotz);
+```
+
 
 ### Raycast
 
