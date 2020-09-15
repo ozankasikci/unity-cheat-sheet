@@ -2,9 +2,13 @@
 
 ## Table of Contents
 
-- [Vector3](vector3)
-  - [Basics](#basics)
-- [Physics](#physics)
+- [Basics](#basics)
+  - [MonoBehaviour](#monobehaviour)
+  - [Transform](#transform)
+  - [Vector3](#vector3)
+  - [Quaternion](#quaternion)
+  - [Euler Angles](#euler-angles)
+- [Movement & Rotation](#movement--rotation)
   - [Move Object](#move-object)
     - [Transform.Translate()](#transformtranslate)
     - [Vector3.MoveTowards()](#vector3movetowards)
@@ -13,7 +17,7 @@
     - [Transform.rotation](#transformrotation)
     - [Transform.eulerAngles](#transformeulerangles)
     - [Transform.Rotate()](#transformrotate)
-    - [Transform.Lookat()](#transformlookat)
+    - [Transform.LookAt()](#transformlookat)
     - [Quaternion.LookRotation()](#quaternionlookrotation)
     - [Quaternion.FromToRotation()](#quaternionfromtorotation)
     - [Quaternion.ToAngleAxis()](#quaterniontoangleaxis)
@@ -29,17 +33,65 @@
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
 
-## Vector3
+## Basics
 
-### Basics
+### [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
+```csharp
+// MonoBehaviour is the base class from which every Unity script derives.
 
+It has the following methods implemented;
+Start()
+Update()
+FixedUpdate()
+LateUpdate()
+OnGUI()
+OnDisable()
+OnEnable()
+```
+
+### [Transform](https://docs.unity3d.com/ScriptReference/Transform.html)
+```csharp
+// Every object in a Scene has a Transform. It's used to store and manipulate the position, rotation and scale of the object.
+
+transform.position.x = 0;
+```
+
+### [Vector3](https://docs.unity3d.com/ScriptReference/Vector3.html)
 ```csharp
 // Vector3 is representation of 3D vectors and points, used to represent 3D positions,considering x,y & z axis.
 
 Vector3 v = new Vector3(0f, 0f, 0f);
 ```
 
-## Physics
+### [Quaternion](https://docs.unity3d.com/ScriptReference/Vector3.html)
+```csharp
+// A Quaternion stores the rotation of the Transform in world space.
+// Quaternions are based on complex numbers and don't suffer from gimbal lock.
+// Unity internally uses Quaternions to represent all rotations.
+// You almost never access or modify individual Quaternion components (x,y,z,w); 
+
+// A rotation 30 degrees around the y-axis
+Quaternion rotation = Quaternion.Euler(0, 30, 0);
+```
+
+### Euler Angles
+```csharp
+// Euler angles are "degree angles" like 90, 180, 45, 30 degrees.
+// Quaternions differ from Euler angles in that they represent a point on a Unit Sphere (the radius is 1 unit).
+
+// Create a quaternion that represents 30 degrees about X, 10 degrees about Y
+Quaternion rotation = Quaternion.Euler(30, 10, 0);
+
+// Using a Vector
+Vector3 EulerRotation = new Vector3(30, 10, 0);
+Quaternion rotation = Quaternion.Euler(EulerRotation);
+
+// Convert a transform's Quaternion angles to Euler angles
+Quaternion quaternionAngles = transform.rotation;
+Vector3 eulerAngles = quaternionAngles.eulerAngles;
+```
+
+## Movement & Rotation
 
 ### Move Object
 #### Transform.Translate()
