@@ -39,7 +39,7 @@
 ```csharp
 // MonoBehaviour is the base class from which every Unity script derives.
 
-It has the following methods implemented;
+// It has the following methods implemented;
 Start()
 Update()
 FixedUpdate()
@@ -51,14 +51,16 @@ OnEnable()
 
 ### [Transform](https://docs.unity3d.com/ScriptReference/Transform.html)
 ```csharp
-// Every object in a Scene has a Transform. It's used to store and manipulate the position, rotation and scale of the object.
+// Every object in a Scene has a Transform.
+// It's used to store and manipulate the position, rotation and scale of the object.
 
 transform.position.x = 0;
 ```
 
 ### [Vector3](https://docs.unity3d.com/ScriptReference/Vector3.html)
 ```csharp
-// Vector3 is representation of 3D vectors and points, used to represent 3D positions,considering x,y & z axis.
+// Vector3 is representation of 3D vectors and points
+// It's used to represent 3D positions,considering x,y & z axis.
 
 Vector3 v = new Vector3(0f, 0f, 0f);
 ```
