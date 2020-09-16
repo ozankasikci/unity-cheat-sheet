@@ -177,8 +177,8 @@ transform.LookAt(target, Vector3.left);
 public static Quaternion LookRotation(Vector3 forward, Vector3 upwards = Vector3.up);
 
 // The following code rotates the object towards a target object.
-Vector3 relativePos = target.position - transform.position;
-Quaternion rotation = Quaternion.LookRotation(relativePos);
+Vector3 direction = target.position - transform.position;
+Quaternion rotation = Quaternion.LookRotation(direction);
 transform.rotation = rotation;
 ```
 
