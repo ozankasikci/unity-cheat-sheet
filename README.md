@@ -106,7 +106,7 @@ Vector3 eulerAngles = quaternionAngles.eulerAngles;
 public void Translate(Vector3 translation);
 public void Translate(Vector3 translation, Space relativeTo = Space.Self);
 
-transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
+transform.Translate(Vector3.right * movementSpeed);
 ```
 
 #### Vector3.MoveTowards()
