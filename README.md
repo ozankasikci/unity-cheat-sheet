@@ -26,6 +26,7 @@
 - [Input](#input)
   - [Keyboard](#keyboard)
   - [Mouse](#mouse)
+  - [Touch](#touch)
 - [Audio](#audio)
   - [Basic Audio Play](#basic-audio-play)
 - [Design Patterns](#design-patterns)
@@ -261,6 +262,25 @@ if (Input.GetMouseButtonDown(1)) {
 
 if (Input.GetMouseButtonDown(2)) {
     Debug.Log("Pressed middle click.");
+}
+```
+
+### Touch
+```csharp
+if (Input.touchCount > 0) {
+    touch = Input.GetTouch(0);
+
+    if (touch.phase == TouchPhase.Began) {
+        Debug.Log("Touch began");
+    }
+
+    if (touch.phase == TouchPhase.Moved) {
+        Debug.Log("Touch moves");
+    }
+
+    if (touch.phase == TouchPhase.Ended) {
+        Debug.Log("Touch ended");
+    }
 }
 ```
 
