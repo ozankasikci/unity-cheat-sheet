@@ -36,6 +36,7 @@
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
   - [Make object look at the camera](#make-object-look-at-the-camera)
+  - [Load next scene](#load-next-scene)
 
 ## Basics
 
