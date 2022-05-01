@@ -380,5 +380,6 @@ transform.rotation = Quaternion.LookRotation(transform.position - camPosition);
 
 ```csharp
 var nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+
 SceneManager.LoadScene(nextSceneToLoad);
 ```
