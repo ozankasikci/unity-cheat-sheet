@@ -318,7 +318,6 @@ public class PlayAudio : MonoBehaviour {
 
 
 ## Design Patterns
-
 ### Singleton
 
 ```csharp
