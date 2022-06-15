@@ -18,6 +18,7 @@
     - [Transform.rotation](#transformrotation)
     - [Transform.eulerAngles](#transformeulerangles)
     - [Transform.Rotate()](#transformrotate)
+    - [Transform.RotateAround()](#transformrotatearound)
     - [Transform.LookAt()](#transformlookat)
     - [Quaternion.LookRotation()](#quaternionlookrotation)
     - [Quaternion.FromToRotation()](#quaternionfromtorotation)
@@ -173,6 +174,16 @@ public void Rotate(Vector3 eulers, Space relativeTo = Space.Self);
 public void Rotate(float xAngle, float yAngle, float zAngle, Space relativeTo = Space.Self);
 
 transform.Rotate(rotx, roty, rotz);
+```
+
+#### Transform.RotateAround()
+```csharp
+// Rotates the transform about axis passing through point in world coordinates by angle degrees.
+public void RotateAround(Vector3 point, Vector3 axis, float angle);
+
+// Spin the object around the target at 20 degrees/second.
+Transform target;
+transform.RotateAround(target.position, Vector3.up, 20 * Time.deltaTime);
 ```
 
 #### Transform.LookAt()
