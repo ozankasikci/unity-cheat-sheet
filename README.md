@@ -48,13 +48,14 @@
 // Offers some life cycle functions that are easier for you to develop your game.
 
 // Some of the most frequently used ones are as follows;
+Awake()
 Start()
 Update()
 FixedUpdate()
 LateUpdate()
 OnGUI()
-OnDisable()
 OnEnable()
+OnDisable()
 ```
 
 ### [Transform](https://docs.unity3d.com/ScriptReference/Transform.html)
