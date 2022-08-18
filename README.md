@@ -25,7 +25,7 @@
     - [Quaternion.ToAngleAxis()](#quaterniontoangleaxis)
 - [Physics](#physics)
   - [Raycast](#raycast)
-  - [Ignore Collision](#ignore-collision)
+  - [Ignore Collision](#ignorecollision)
 - [Input](#input)
   - [Keyboard](#keyboard)
   - [Mouse](#mouse)
