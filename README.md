@@ -25,6 +25,7 @@
     - [Quaternion.ToAngleAxis()](#quaterniontoangleaxis)
 - [Physics](#physics)
   - [Raycast](#raycast)
+  - [Ignore Collision](#ignore-collision)
 - [Input](#input)
   - [Keyboard](#keyboard)
   - [Mouse](#mouse)
@@ -252,6 +253,17 @@ void FixedUpdate() {
         Debug.Log("Did Hit");
     }
 }
+```
+
+### IgnoreCollision
+```csharp
+// Makes the collision detection system ignore all collisions between collider1 and collider2.
+public static void IgnoreCollision(Collider collider1, Collider collider2, bool ignore = true);
+
+// here we're disabling the collision detection between the colliders of ally and bullet objects.
+Transform bullet;
+Transform ally;
+Physics.IgnoreCollision(bullet.GetComponent<Collider>(), ally.GetComponent<Collider>());
 ```
 
 ## Input
