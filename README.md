@@ -30,6 +30,8 @@
   - [Keyboard](#keyboard)
   - [Mouse](#mouse)
   - [Touch](#touch)
+- [UI](#ui)
+  - [Button](#button)
 - [Audio](#audio)
   - [Basic Audio Play](#basic-audio-play)
 - [Design Patterns](#design-patterns)
@@ -322,6 +324,24 @@ if (Input.touchCount > 0) {
     if (touch.phase == TouchPhase.Ended) {
         Debug.Log("Touch ended");
     }
+}
+```
+
+## UI
+
+### Button
+
+```csharp
+// Button is used to handle user clicks and interactions.
+// Attach this script to a Button component to respond to button clicks.
+
+using UnityEngine.UI;
+
+Button myButton = GetComponent<Button>();
+myButton.onClick.AddListener(MyButtonClickHandler);
+
+void MyButtonClickHandler() {
+    Debug.Log("Button Clicked!");
 }
 ```
 
