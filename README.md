@@ -32,6 +32,7 @@
   - [Touch](#touch)
 - [UI](#ui)
   - [Button](#button)
+  - [Slider](#slider)
 - [Audio](#audio)
   - [Basic Audio Play](#basic-audio-play)
 - [Design Patterns](#design-patterns)
@@ -342,6 +343,21 @@ myButton.onClick.AddListener(MyButtonClickHandler);
 
 void MyButtonClickHandler() {
     Debug.Log("Button Clicked!");
+}
+```
+
+### Slider
+```csharp
+// Slider is used for selecting a value within a range.
+// Attach this script to a Slider component to respond to value changes.
+
+using UnityEngine.UI;
+
+Slider mySlider = GetComponent<Slider>();
+mySlider.onValueChanged.AddListener(MySliderValueChangedHandler);
+
+void MySliderValueChangedHandler(float value) {
+    Debug.Log("Slider Value: " + value);
 }
 ```
 
