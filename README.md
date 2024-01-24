@@ -468,7 +468,7 @@ public class GameManager : MonoBehaviour {
 ```
 
 ### Observer Pattern
-```
+```csharp
 // Observer interface
 public interface IObserver {
     void UpdateObserver(string message);
