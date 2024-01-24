@@ -78,7 +78,7 @@ transform.position.x = 0;
 Vector3 v = new Vector3(0f, 0f, 0f);
 ```
 
-### [Quaternion](https://docs.unity3d.com/ScriptReference/Vector3.html)
+### [Quaternion](https://docs.unity3d.com/ScriptReference/Quaternion.html)
 ```csharp
 // A Quaternion stores the rotation of the Transform in world space.
 // Quaternions are based on complex numbers and don't suffer from gimbal lock.
