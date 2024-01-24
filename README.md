@@ -403,7 +403,6 @@ public class SingletonClass: MonoBehaviour {
 
 // Use it in another class
 public class AnotherClass: MonoBehaviour {
-    public SingletonClass instance;
 
     private void Awake() {
        SingletonClass.Instance.SomeFunction();
