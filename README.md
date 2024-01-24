@@ -383,9 +383,9 @@ public class PlayAudio : MonoBehaviour {
 ```csharp
 // Define singleton class
 public class SingletonClass: MonoBehaviour {
-    private static SomeClass instance;
+    private static SingletonClass instance;
 
-    public static SomeClass Instance { get { return instance; } }
+    public static SingletonClass Instance { get { return instance; } }
 
     private void Awake() {
         if (instance != null && instance != this) {
@@ -394,14 +394,17 @@ public class SingletonClass: MonoBehaviour {
             instance = this;
         }
     }
+
+    private void SomeFunction() {
+    }
 }
 
 // Use it in another class
 public class AnotherClass: MonoBehaviour {
-    public Singleton instance;
+    public SingletonClass instance;
 
     private void Awake() {
-       instance = Singleton.Instance;
+       SingletonClass.Instance.SomeFunction();
     }
 }
 ```
