@@ -411,7 +411,7 @@ public class AnotherClass: MonoBehaviour {
 ```
 
 ### Factory Pattern
-```
+```csharp
 // Interface for the enemy
 public interface IEnemy {
     void Attack();
