@@ -40,6 +40,7 @@
   - [Factory Pattern](#factory-pattern)
   - [Observer Pattern](#observer-pattern)
   - [Command Pattern](#command-pattern)
+  - [State Pattern](#state-pattern)
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
@@ -576,6 +577,95 @@ public class CommandUser : MonoBehaviour {
         }
 
         // Add other directions and invoker.Undo() for undos
+    }
+}
+```
+
+### State Pattern
+```csharp
+// State interface
+public interface IState {
+    void Enter();
+    void Execute();
+    void Exit();
+}
+
+// Concrete state classes
+public class IdleState : IState {
+    private readonly StateMachine stateMachine;
+
+    public IdleState(StateMachine stateMachine) {
+        this.stateMachine = stateMachine;
+    }
+
+    public void Enter() {
+        Debug.Log("Entered Idle State");
+    }
+
+    public void Execute() {
+        Debug.Log("Executing Idle State");
+    }
+
+    public void Exit() {
+        Debug.Log("Exited Idle State");
+    }
+}
+
+public class MoveState : IState {
+    private readonly StateMachine stateMachine;
+
+    public MoveState(StateMachine stateMachine) {
+        this.stateMachine = stateMachine;
+    }
+
+    public void Enter() {
+        Debug.Log("Entered Move State");
+    }
+
+    public void Execute() {
+        Debug.Log("Executing Move State");
+    }
+
+    public void Exit() {
+        Debug.Log("Exited Move State");
+    }
+}
+
+// StateMachine class
+public class StateMachine {
+    private IState currentState;
+
+    public void ChangeState(IState newState) {
+        if (currentState != null) {
+            currentState.Exit();
+        }
+        currentState = newState;
+        currentState.Enter();
+    }
+
+    public void Update() {
+        if (currentState != null) {
+            currentState.Execute();
+        }
+    }
+}
+
+// Character class that uses the StateMachine
+public class Character : MonoBehaviour {
+    private StateMachine stateMachine;
+
+    private void Start() {
+        stateMachine = new StateMachine();
+        stateMachine.ChangeState(new IdleState(stateMachine));
+    }
+
+    private void Update() {
+        stateMachine.Update();
+
+        // Example state transitions based on conditions
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            stateMachine.ChangeState(new MoveState(stateMachine));
+        }
     }
 }
 ```
