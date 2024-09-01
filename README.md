@@ -41,6 +41,7 @@
   - [Observer Pattern](#observer-pattern)
   - [Command Pattern](#command-pattern)
   - [State Pattern](#state-pattern)
+  - [Strategy Pattern](#strategy-pattern)
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
@@ -665,6 +666,82 @@ public class Character : MonoBehaviour {
         // Example state transitions based on conditions
         if (Input.GetKeyDown(KeyCode.Space)) {
             stateMachine.ChangeState(new MoveState(stateMachine));
+        }
+    }
+}
+```
+
+### Strategy Pattern
+```csharp
+// Strategy interface
+public interface IAttackStrategy {
+    void Attack(Transform attacker, Transform target);
+}
+
+// Concrete strategy classes
+public class MeleeAttackStrategy : IAttackStrategy {
+    public void Attack(Transform attacker, Transform target) {
+        float meleeRange = 2f;
+        if (Vector3.Distance(attacker.position, target.position) <= meleeRange) {
+            Debug.Log("Performing melee attack!");
+            // Implement melee attack logic here
+        } else {
+            Debug.Log("Target is too far for melee attack");
+        }
+    }
+}
+
+public class RangedAttackStrategy : IAttackStrategy {
+    public void Attack(Transform attacker, Transform target) {
+        Debug.Log("Performing ranged attack!");
+        // Implement ranged attack logic here, e.g., instantiate a projectile
+    }
+}
+
+public class AreaOfEffectAttackStrategy : IAttackStrategy {
+    public void Attack(Transform attacker, Transform target) {
+        Debug.Log("Performing area of effect attack!");
+        // Implement AoE attack logic here, e.g., create an explosion effect
+    }
+}
+
+// Context class that uses the strategy
+public class Character : MonoBehaviour {
+    private IAttackStrategy attackStrategy;
+    public Transform target;
+
+    public void SetAttackStrategy(IAttackStrategy strategy) {
+        attackStrategy = strategy;
+    }
+
+    public void PerformAttack() {
+        if (attackStrategy != null && target != null) {
+            attackStrategy.Attack(transform, target);
+        }
+    }
+}
+
+// Usage example
+public class GameManager : MonoBehaviour {
+    public Character character;
+
+    private void Start() {
+        character.SetAttackStrategy(new MeleeAttackStrategy());
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.M)) {
+            character.SetAttackStrategy(new MeleeAttackStrategy());
+        }
+        else if (Input.GetKeyDown(KeyCode.R)) {
+            character.SetAttackStrategy(new RangedAttackStrategy());
+        }
+        else if (Input.GetKeyDown(KeyCode.A)) {
+            character.SetAttackStrategy(new AreaOfEffectAttackStrategy());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            character.PerformAttack();
         }
     }
 }
