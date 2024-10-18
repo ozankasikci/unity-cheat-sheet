@@ -35,6 +35,12 @@
   - [Slider](#slider)
 - [Audio](#audio)
   - [Basic Audio Play](#basic-audio-play)
+- [Scripting](#scripting)
+  - [Coroutines](#coroutines)
+  - [Scriptable Objects](#scriptable-objects)
+  - [Event Systems](#event-systems)
+  - [Custom Editor Scripts](#custom-editor-scripts)
+  - [Delegates and Events](#delegates-and-events)
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton)
   - [Factory Pattern](#factory-pattern)
@@ -382,6 +388,89 @@ public class PlayAudio : MonoBehaviour {
 }
 ```
 
+## Scripting
+
+### Coroutines
+```csharp
+// Coroutines allow you to pause execution and return control to Unity, then continue where it left off on the following frame.
+IEnumerator ExampleCoroutine() {
+    Debug.Log("Coroutine started");
+    yield return new WaitForSeconds(2);
+    Debug.Log("Coroutine resumed after 2 seconds");
+}
+
+// Start a coroutine
+StartCoroutine(ExampleCoroutine());
+```
+
+### Scriptable Objects
+```csharp
+// ScriptableObjects are data containers that you can use to save large amounts of data, independent of class instances.
+[CreateAssetMenu(fileName = "NewData", menuName = "ScriptableObjects/Data")]
+public class Data : ScriptableObject {
+    public string dataName;
+    public int dataValue;
+}
+
+// Usage
+Data myData = ScriptableObject.CreateInstance<Data>();
+```
+
+### Event Systems
+```csharp
+// UnityEvent is a way to create events that can be subscribed to in the Unity Editor.
+using UnityEngine.Events;
+
+public class EventExample : MonoBehaviour {
+    public UnityEvent myEvent;
+
+    void Start() {
+        if (myEvent != null) {
+            myEvent.Invoke();
+        }
+    }
+}
+```
+
+### Custom Editor Scripts
+```csharp
+// Custom Editor scripts allow you to create custom inspectors and windows in the Unity Editor.
+using UnityEditor;
+using UnityEngine;
+
+[CustomEditor(typeof(MyComponent))]
+public class MyComponentEditor : Editor {
+    public override void OnInspectorGUI() {
+        DrawDefaultInspector();
+
+        MyComponent myComponent = (MyComponent)target;
+        if (GUILayout.Button("Do Something")) {
+            myComponent.DoSomething();
+        }
+    }
+}
+```
+
+### Delegates and Events
+```csharp
+// Delegates are type-safe function pointers, and events are a way to broadcast messages to multiple listeners.
+public delegate void MyDelegate(string message);
+
+public class DelegateExample {
+    public event MyDelegate OnMessageReceived;
+
+    public void SendMessage(string message) {
+        if (OnMessageReceived != null) {
+            OnMessageReceived(message);
+        }
+    }
+}
+
+// Usage
+DelegateExample example = new DelegateExample();
+example.OnMessageReceived += (msg) => Debug.Log(msg);
+example.SendMessage("Hello, World!");
+```
 
 ## Design Patterns
 ### Singleton
