@@ -49,6 +49,7 @@
   - [State Pattern](#state-pattern)
   - [Strategy Pattern](#strategy-pattern)
   - [Object Pooling Pattern](#object-pooling-pattern)
+  - [Chain of Responsibility Pattern](#chain-of-responsibility-pattern)
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
@@ -1066,6 +1067,30 @@ public class GameManager : MonoBehaviour
 }
 ```
 
+### Chain of Responsibility Pattern
+The Chain of Responsibility pattern creates a chain of handler objects for a request. Each handler contains a reference to the next handler in the chain and decides either to handle the request or pass it to the next handler.
+
+#### Example: Input Handling System
+
+Demonstrates using Chain of Responsibility to manage game input across different states (gameplay, UI, cutscenes, dialog). Each handler in the chain processes input based on the current game state.
+
+[View Example](Patterns/ChainOfResponsibility/README.md)
+
+#### When to Use
+
+- When you want to decouple senders and receivers
+- When multiple objects may handle a request
+- When the handler isn't known in advance
+- When the handler can be determined dynamically
+
+#### Benefits
+
+- Reduces coupling between senders and receivers
+- Simplifies object handling responsibilities
+- Adds flexibility in assigning responsibilities
+- Easy to add or remove handlers
+
+
 ## Practical Use Cases
 
 ### Check if object is on the ground
@@ -1104,4 +1129,3 @@ var totalSceneCount = SceneManager.sceneCountInBuildSettings;
 if (nextSceneToLoad < totalSceneCount) {
   SceneManager.LoadScene(nextSceneToLoad);
 }
-```
