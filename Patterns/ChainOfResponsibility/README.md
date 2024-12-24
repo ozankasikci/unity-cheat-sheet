@@ -8,14 +8,15 @@ The Chain of Responsibility pattern manages input handling across different game
 
 ## Implementation
 
-- `InputData`: Contains all input information (movement, buttons)
-- `InputHandler`: Base handler class with chain logic
+- [`InputState.cs`](InputState.cs): Defines the possible game states
+- [`InputData.cs`](InputData.cs): Contains all input information (movement, buttons)
+- [`InputHandler.cs`](InputHandler.cs): Base handler class with chain logic
 - Game States:
-  - `GameplayInputHandler`: Handles player movement and actions
-  - `UIInputHandler`: Handles UI navigation and selection
-  - `CutsceneInputHandler`: Handles cutscene controls
-  - `DialogInputHandler`: Handles dialog system input
-- `InputManager`: Sets up the chain and manages game states
+  - [`GameplayInputHandler.cs`](Handlers/GameplayInputHandler.cs): Handles player movement and actions
+  - [`UIInputHandler.cs`](Handlers/UIInputHandler.cs): Handles UI navigation and selection
+  - [`CutsceneInputHandler.cs`](Handlers/CutsceneInputHandler.cs): Handles cutscene controls
+  - [`DialogInputHandler.cs`](Handlers/DialogInputHandler.cs): Handles dialog system input
+- [`InputManager.cs`](InputManager.cs): Sets up the chain and manages game states
 
 ## Usage
 
