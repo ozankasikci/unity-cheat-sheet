@@ -833,7 +833,7 @@ public class CommandUser : MonoBehaviour {
 ### State Pattern
 The State Pattern allows an object to alter its behavior when its internal state changes. It encapsulates state-specific behavior and makes state transitions explicit.
 
-> 📘 **See our detailed tutorial: [State Pattern - Onboarding Example](Patterns/StatePattern/README.md)**  
+> 📘 **See the detailed example: [State Pattern - Onboarding Example](Patterns/StatePattern/README.md)**  
 > A complete example showing how to implement a game onboarding system using the State Pattern.
 
 #### Basic Example
@@ -1019,26 +1019,77 @@ public class GameManager : MonoBehaviour
 ### Chain of Responsibility Pattern
 The Chain of Responsibility pattern creates a chain of handler objects for a request. Each handler contains a reference to the next handler in the chain and decides either to handle the request or pass it to the next handler.
 
-#### Example: Input Handling System
+> 📘 **See the detailed example: [Chain of Responsibility - Input Handling Example](Patterns/ChainOfResponsibility/README.md)**  
+> A complete example showing how to implement a game input handling system using the Chain of Responsibility Pattern.
 
-Demonstrates using Chain of Responsibility to manage game input across different states (gameplay, UI, cutscenes, dialog). Each handler in the chain processes input based on the current game state.
+#### Basic Example
+```csharp
+// Handler interface
+public interface IHandler {
+    void SetNext(IHandler handler);
+    void HandleRequest(string request);
+}
 
-[View Example](Patterns/ChainOfResponsibility/README.md)
+// Base handler class
+public abstract class BaseHandler : IHandler {
+    protected IHandler nextHandler;
 
-#### When to Use
+    public void SetNext(IHandler handler) {
+        nextHandler = handler;
+    }
 
-- When you want to decouple senders and receivers
-- When multiple objects may handle a request
-- When the handler isn't known in advance
-- When the handler can be determined dynamically
+    public virtual void HandleRequest(string request) {
+        if (nextHandler != null) {
+            nextHandler.HandleRequest(request);
+        }
+    }
+}
 
-#### Benefits
+// Concrete handlers
+public class UIHandler : BaseHandler {
+    public override void HandleRequest(string request) {
+        if (request == "UI_CLICK") {
+            Debug.Log("UI Handler: Handling UI click");
+        } else {
+            base.HandleRequest(request);
+        }
+    }
+}
 
-- Reduces coupling between senders and receivers
-- Simplifies object handling responsibilities
-- Adds flexibility in assigning responsibilities
-- Easy to add or remove handlers
+public class GameplayHandler : BaseHandler {
+    public override void HandleRequest(string request) {
+        if (request == "PLAYER_MOVE") {
+            Debug.Log("Gameplay Handler: Handling player movement");
+        } else {
+            base.HandleRequest(request);
+        }
+    }
+}
 
+// Usage
+public class InputManager : MonoBehaviour {
+    private IHandler handlerChain;
+
+    private void Start() {
+        // Set up the chain
+        var uiHandler = new UIHandler();
+        var gameplayHandler = new GameplayHandler();
+        
+        uiHandler.SetNext(gameplayHandler);
+        handlerChain = uiHandler;
+    }
+
+    private void Update() {
+        // Example: Process different types of input
+        if (Input.GetMouseButtonDown(0)) {
+            handlerChain.HandleRequest("UI_CLICK");
+        }
+        if (Input.GetKeyDown(KeyCode.W)) {
+            handlerChain.HandleRequest("PLAYER_MOVE");
+        }
+    }
+}
+```
 
 ## Practical Use Cases
 
