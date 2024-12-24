@@ -831,93 +831,42 @@ public class CommandUser : MonoBehaviour {
 ```
 
 ### State Pattern
+The State Pattern allows an object to alter its behavior when its internal state changes. It encapsulates state-specific behavior and makes state transitions explicit.
+
+#### Example: Basic State Machine
 ```csharp
 // State interface
 public interface IState {
     void Enter();
-    void Execute();
+    void Update();
     void Exit();
 }
 
-// Concrete state classes
+// Example state implementation
 public class IdleState : IState {
-    private readonly StateMachine stateMachine;
-
-    public IdleState(StateMachine stateMachine) {
-        this.stateMachine = stateMachine;
-    }
-
-    public void Enter() {
-        Debug.Log("Entered Idle State");
-    }
-
-    public void Execute() {
-        Debug.Log("Executing Idle State");
-    }
-
-    public void Exit() {
-        Debug.Log("Exited Idle State");
-    }
+    public void Enter() => Debug.Log("Entered Idle State");
+    public void Update() => Debug.Log("Updating Idle State");
+    public void Exit() => Debug.Log("Exited Idle State");
 }
 
-public class MoveState : IState {
-    private readonly StateMachine stateMachine;
-
-    public MoveState(StateMachine stateMachine) {
-        this.stateMachine = stateMachine;
-    }
-
-    public void Enter() {
-        Debug.Log("Entered Move State");
-    }
-
-    public void Execute() {
-        Debug.Log("Executing Move State");
-    }
-
-    public void Exit() {
-        Debug.Log("Exited Move State");
-    }
-}
-
-// StateMachine class
-public class StateMachine {
+// State machine that manages state transitions
+public class StateMachine : MonoBehaviour {
     private IState currentState;
 
     public void ChangeState(IState newState) {
-        if (currentState != null) {
-            currentState.Exit();
-        }
+        currentState?.Exit();
         currentState = newState;
-        currentState.Enter();
-    }
-
-    public void Update() {
-        if (currentState != null) {
-            currentState.Execute();
-        }
-    }
-}
-
-// Character class that uses the StateMachine
-public class Character : MonoBehaviour {
-    private StateMachine stateMachine;
-
-    private void Start() {
-        stateMachine = new StateMachine();
-        stateMachine.ChangeState(new IdleState(stateMachine));
+        currentState?.Enter();
     }
 
     private void Update() {
-        stateMachine.Update();
-
-        // Example state transitions based on conditions
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            stateMachine.ChangeState(new MoveState(stateMachine));
-        }
+        currentState?.Update();
     }
 }
 ```
+
+For a more detailed example of using the State Pattern to create a game onboarding system, see:
+[State Pattern - Onboarding Example](Patterns/StatePattern/README.md)
 
 ### Strategy Pattern
 ```csharp
