@@ -833,7 +833,10 @@ public class CommandUser : MonoBehaviour {
 ### State Pattern
 The State Pattern allows an object to alter its behavior when its internal state changes. It encapsulates state-specific behavior and makes state transitions explicit.
 
-#### Example: Basic State Machine
+> 📘 **See our detailed tutorial: [State Pattern - Onboarding Example](Patterns/StatePattern/README.md)**  
+> A complete example showing how to implement a game onboarding system using the State Pattern.
+
+#### Basic Example
 ```csharp
 // State interface
 public interface IState {
@@ -864,9 +867,6 @@ public class StateMachine : MonoBehaviour {
     }
 }
 ```
-
-For a more detailed example of using the State Pattern to create a game onboarding system, see:
-[State Pattern - Onboarding Example](Patterns/StatePattern/README.md)
 
 ### Strategy Pattern
 ```csharp
