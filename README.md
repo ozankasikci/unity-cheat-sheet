@@ -869,77 +869,33 @@ public class StateMachine : MonoBehaviour {
 ```
 
 ### Strategy Pattern
+The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. This pattern lets the algorithm vary independently from clients that use it.
+
+> 📘 **See the detailed example: [Strategy Pattern - Combat System Example](Patterns/StrategyPattern/README.md)**  
+> A complete example showing how to implement a combat system using the Strategy Pattern.
+
+#### Basic Example
 ```csharp
 // Strategy interface
-public interface IAttackStrategy {
-    void Attack(Transform attacker, Transform target);
+public interface IStrategy {
+    void Execute();
 }
 
-// Concrete strategy classes
-public class MeleeAttackStrategy : IAttackStrategy {
-    public void Attack(Transform attacker, Transform target) {
-        float meleeRange = 2f;
-        if (Vector3.Distance(attacker.position, target.position) <= meleeRange) {
-            Debug.Log("Performing melee attack!");
-            // Implement melee attack logic here
-        } else {
-            Debug.Log("Target is too far for melee attack");
-        }
-    }
-}
-
-public class RangedAttackStrategy : IAttackStrategy {
-    public void Attack(Transform attacker, Transform target) {
-        Debug.Log("Performing ranged attack!");
-        // Implement ranged attack logic here, e.g., instantiate a projectile
-    }
-}
-
-public class AreaOfEffectAttackStrategy : IAttackStrategy {
-    public void Attack(Transform attacker, Transform target) {
-        Debug.Log("Performing area of effect attack!");
-        // Implement AoE attack logic here, e.g., create an explosion effect
-    }
+// Example strategy implementation
+public class AttackStrategy : IStrategy {
+    public void Execute() => Debug.Log("Performing attack!");
 }
 
 // Context class that uses the strategy
 public class Character : MonoBehaviour {
-    private IAttackStrategy attackStrategy;
-    public Transform target;
+    private IStrategy strategy;
 
-    public void SetAttackStrategy(IAttackStrategy strategy) {
-        attackStrategy = strategy;
+    public void SetStrategy(IStrategy newStrategy) {
+        strategy = newStrategy;
     }
 
-    public void PerformAttack() {
-        if (attackStrategy != null && target != null) {
-            attackStrategy.Attack(transform, target);
-        }
-    }
-}
-
-// Usage example
-public class GameManager : MonoBehaviour {
-    public Character character;
-
-    private void Start() {
-        character.SetAttackStrategy(new MeleeAttackStrategy());
-    }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.M)) {
-            character.SetAttackStrategy(new MeleeAttackStrategy());
-        }
-        else if (Input.GetKeyDown(KeyCode.R)) {
-            character.SetAttackStrategy(new RangedAttackStrategy());
-        }
-        else if (Input.GetKeyDown(KeyCode.A)) {
-            character.SetAttackStrategy(new AreaOfEffectAttackStrategy());
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            character.PerformAttack();
-        }
+    public void ExecuteStrategy() {
+        strategy?.Execute();
     }
 }
 ```
