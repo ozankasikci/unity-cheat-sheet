@@ -156,16 +156,18 @@ function generateDocsifyFiles(sections: Section[]): void {
 
 function generateSidebar(sections: Section[]): string {
     let content = '<!-- docs/_sidebar.md -->\n\n';
-    content += '* [Home](/)\n';
+    content += '* [Home](README.md)\n\n';
 
     sections.forEach(section => {
-        content += `* [${section.title}](${section.slug}/README.md)\n`;
+        content += `* ${section.title}\n`;
+        content += `  * [Overview](${section.slug}/README.md)\n`;
         section.subsections.forEach(subsection => {
             const fileName = subsection.slug.includes('http') ?
                 subsection.slug.split('-https')[0] : 
                 subsection.slug;
             content += `  * [${subsection.title}](${section.slug}/${fileName}.md)\n`;
         });
+        content += '\n';
     });
 
     return content;
