@@ -114,10 +114,6 @@ function generateDocsifyFiles(sections: Section[]): void {
             fs.mkdirSync(sectionDir, { recursive: true });
         }
 
-        // Generate README.md for the section
-        const mainContent = `# ${section.title}\n\n${section.content.trim()}`;
-        fs.writeFileSync(path.join(sectionDir, 'README.md'), mainContent);
-
         // Generate subsection files
         section.subsections.forEach(subsection => {
             const content = `# ${subsection.title}\n\n${subsection.content.trim()}`;
@@ -137,7 +133,7 @@ function generateDocsifyFiles(sections: Section[]): void {
     mainReadme += `## Table of Contents\n\n`;
     
     sections.forEach(section => {
-        mainReadme += `### [${section.title}](${section.slug}/README.md)\n\n`;
+        mainReadme += `### ${section.title}\n\n`;
         if (section.subsections.length > 0) {
             section.subsections.forEach(subsection => {
                 const fileName = subsection.slug.includes('http') ?
@@ -159,7 +155,6 @@ function generateSidebar(sections: Section[]): string {
 
     sections.forEach(section => {
         content += `* ${section.title}\n`;
-        content += `  * [Overview](${section.slug}/README.md)\n`;
         section.subsections.forEach(subsection => {
             const fileName = subsection.slug.includes('http') ?
                 subsection.slug.split('-https')[0] : 
