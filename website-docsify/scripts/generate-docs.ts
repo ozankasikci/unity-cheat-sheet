@@ -149,9 +149,8 @@ function generateDocsifyFiles(sections: Section[]): void {
         }
     });
 
-    // Write both README.md and index.md in docs directory
+    // Write README.md in docs directory
     fs.writeFileSync(path.join(docsDir, 'README.md'), mainReadme);
-    fs.writeFileSync(path.join(docsDir, 'index.md'), mainReadme);
 }
 
 function generateSidebar(sections: Section[]): string {
