@@ -69,46 +69,8 @@ public class InputManager : MonoBehaviour {
         }
     }
 }
+```
 
 #### Detailed Example
 See the [Chain of Responsibility - Input Handling Example](Patterns/ChainOfResponsibility/README.md) for a complete example showing how to implement a game input handling system using the Chain of Responsibility Pattern.
-
-## Practical Use Cases
-
-### Check if object is on the ground
-
-```csharp
-RaycastHit hit;
-
-// Unlike this example, most of the time you should pass a layerMask as the last option to hit only to the ground
-if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.5f)) {
-   Debug.log("Hit something below!");
-}
-```
-
-### Get the transform of a Body Bone
-
-```csharp
-Animator animator;
-
-Transform transform = animator.GetBoneTransform(HumanBodyBones.Head);
-```
-
-### Make object look at the camera
-
-```csharp
-var camPosition = Camera.main.transform.position;
-
-transform.rotation = Quaternion.LookRotation(transform.position - camPosition);
-```
-
-### Load next scene
-
-```csharp
-var nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
-var totalSceneCount = SceneManager.sceneCountInBuildSettings;
-
-if (nextSceneToLoad < totalSceneCount) {
-  SceneManager.LoadScene(nextSceneToLoad);
-}
 

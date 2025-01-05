@@ -1042,6 +1042,7 @@ public class InputManager : MonoBehaviour {
         }
     }
 }
+```
 
 #### Detailed Example
 See the [Chain of Responsibility - Input Handling Example](Patterns/ChainOfResponsibility/README.md) for a complete example showing how to implement a game input handling system using the Chain of Responsibility Pattern.
