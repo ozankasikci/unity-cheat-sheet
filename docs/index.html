@@ -28,7 +28,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="canonical" href="https://ozankasikci.github.io/unity-cheat-sheet/">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  
+  <!-- Theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" title="docsify-darklight-theme" type="text/css">
   
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -129,7 +131,25 @@
             return html;
           });
         }
-      ]
+      ],
+      darklightTheme: {
+        defaultTheme: 'light',
+        siteFont: 'Source Sans Pro, Helvetica Neue',
+        codeFontFamily: 'Roboto Mono, Monaco, courier, monospace',
+        bodyFontSize: '15px',
+        dark: {
+          accent: '#42b983',
+          background: '#091a28',
+          toogleBackground: '#ffffff',
+          textColor: '#b4b4b4'
+        },
+        light: {
+          accent: '#42b983',
+          background: '#ffffff',
+          toogleBackground: '#091a28',
+          textColor: '#34495e'
+        }
+      }
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
@@ -138,5 +158,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
 </body>
 </html> 
