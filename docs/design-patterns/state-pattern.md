@@ -2,9 +2,6 @@
 
 The State Pattern allows an object to alter its behavior when its internal state changes. It encapsulates state-specific behavior and makes state transitions explicit.
 
-> 📘 **See the detailed example: [State Pattern - Onboarding Example](Patterns/StatePattern/README.md)**  
-> A complete example showing how to implement a game onboarding system using the State Pattern.
-
 #### Basic Example
 ```csharp
 // State interface
@@ -36,4 +33,7 @@ public class StateMachine : MonoBehaviour {
     }
 }
 ```
+
+#### Detailed Example
+See the [State Pattern - Onboarding Example](Patterns/StatePattern/README.md) for a complete example showing how to implement a game onboarding system using the State Pattern.
 

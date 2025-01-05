@@ -63,11 +63,14 @@
   * [Command Pattern](design-patterns/command-pattern.md)
   * [State Pattern](design-patterns/state-pattern.md)
     * [Basic Example](design-patterns/state-pattern.md#basic-example)
+    * [Detailed Example](design-patterns/state-pattern.md#detailed-example)
   * [Strategy Pattern](design-patterns/strategy-pattern.md)
     * [Basic Example](design-patterns/strategy-pattern.md#basic-example)
+    * [Detailed Example](design-patterns/strategy-pattern.md#detailed-example)
   * [Object Pooling Pattern](design-patterns/object-pooling-pattern.md)
   * [Chain of Responsibility Pattern](design-patterns/chain-of-responsibility-pattern.md)
     * [Basic Example](design-patterns/chain-of-responsibility-pattern.md#basic-example)
+    * [Detailed Example](design-patterns/chain-of-responsibility-pattern.md#detailed-example)
 
 * Practical Use Cases
   * [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)

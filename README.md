@@ -833,9 +833,6 @@ public class CommandUser : MonoBehaviour {
 ### State Pattern
 The State Pattern allows an object to alter its behavior when its internal state changes. It encapsulates state-specific behavior and makes state transitions explicit.
 
-> 📘 **See the detailed example: [State Pattern - Onboarding Example](Patterns/StatePattern/README.md)**  
-> A complete example showing how to implement a game onboarding system using the State Pattern.
-
 #### Basic Example
 ```csharp
 // State interface
@@ -868,11 +865,11 @@ public class StateMachine : MonoBehaviour {
 }
 ```
 
+#### Detailed Example
+See the [State Pattern - Onboarding Example](Patterns/StatePattern/README.md) for a complete example showing how to implement a game onboarding system using the State Pattern.
+
 ### Strategy Pattern
 The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. This pattern lets the algorithm vary independently from clients that use it.
-
-> 📘 **See the detailed example: [Strategy Pattern - Combat System Example](Patterns/StrategyPattern/README.md)**  
-> A complete example showing how to implement a combat system using the Strategy Pattern.
 
 #### Basic Example
 ```csharp
@@ -899,6 +896,9 @@ public class Character : MonoBehaviour {
     }
 }
 ```
+
+#### Detailed Example
+See the [Strategy Pattern - Combat System Example](Patterns/StrategyPattern/README.md) for a complete example showing how to implement a combat system using the Strategy Pattern.
 
 ### Object Pooling Pattern
 ```csharp
@@ -975,9 +975,6 @@ public class GameManager : MonoBehaviour
 ### Chain of Responsibility Pattern
 The Chain of Responsibility pattern creates a chain of handler objects for a request. Each handler contains a reference to the next handler in the chain and decides either to handle the request or pass it to the next handler.
 
-> 📘 **See the detailed example: [Chain of Responsibility - Input Handling Example](Patterns/ChainOfResponsibility/README.md)**  
-> A complete example showing how to implement a game input handling system using the Chain of Responsibility Pattern.
-
 #### Basic Example
 ```csharp
 // Handler interface
@@ -1045,7 +1042,9 @@ public class InputManager : MonoBehaviour {
         }
     }
 }
-```
+
+#### Detailed Example
+See the [Chain of Responsibility - Input Handling Example](Patterns/ChainOfResponsibility/README.md) for a complete example showing how to implement a game input handling system using the Chain of Responsibility Pattern.
 
 ## Practical Use Cases
 
