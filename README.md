@@ -271,7 +271,7 @@ void FixedUpdate() {
 }
 ```
 
-### IgnoreCollision
+### Ignore Collision
 ```csharp
 // Makes the collision detection system ignore all collisions between collider1 and collider2.
 public static void IgnoreCollision(Collider collider1, Collider collider2, bool ignore = true);
