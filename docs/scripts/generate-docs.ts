@@ -205,13 +205,13 @@ function generateDocsifyFiles(sections: Section[]): void {
         });
     });
 
-    // Generate _sidebar.md in the base directory
+    // Generate _sidebar.md in the docs directory
     const sidebarContent = generateSidebar(sections);
-    fs.writeFileSync(path.join(baseDir, '_sidebar.md'), sidebarContent);
+    fs.writeFileSync(path.join(contentDir, '_sidebar.md'), sidebarContent);
 
-    // Generate main README.md in the base directory
+    // Generate main README.md in the docs directory
     const mainReadme = generateMainReadme(sections);
-    fs.writeFileSync(path.join(baseDir, 'README.md'), mainReadme);
+    fs.writeFileSync(path.join(contentDir, 'README.md'), mainReadme);
 }
 
 function generateSectionContent(section: Section): string {
