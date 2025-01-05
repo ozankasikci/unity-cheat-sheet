@@ -179,15 +179,10 @@ function findContentForSection(section: Section, fullContent: string): void {
 function generateDocsifyFiles(sections: Section[]): void {
     // Create the base docs directory
     const baseDir = path.join(__dirname, '..');
-    const contentDir = path.join(baseDir, 'docs');
     
-    if (!fs.existsSync(contentDir)) {
-        fs.mkdirSync(contentDir, { recursive: true });
-    }
-
     // Generate section files
     sections.forEach(section => {
-        const sectionDir = path.join(contentDir, section.slug);
+        const sectionDir = path.join(baseDir, section.slug);
         if (!fs.existsSync(sectionDir)) {
             fs.mkdirSync(sectionDir, { recursive: true });
         }
@@ -205,13 +200,13 @@ function generateDocsifyFiles(sections: Section[]): void {
         });
     });
 
-    // Generate _sidebar.md in the docs directory
+    // Generate _sidebar.md in the base directory
     const sidebarContent = generateSidebar(sections);
-    fs.writeFileSync(path.join(contentDir, '_sidebar.md'), sidebarContent);
+    fs.writeFileSync(path.join(baseDir, '_sidebar.md'), sidebarContent);
 
-    // Generate main README.md in the docs directory
+    // Generate main README.md in the base directory
     const mainReadme = generateMainReadme(sections);
-    fs.writeFileSync(path.join(contentDir, 'README.md'), mainReadme);
+    fs.writeFileSync(path.join(baseDir, 'README.md'), mainReadme);
 }
 
 function generateSectionContent(section: Section): string {
