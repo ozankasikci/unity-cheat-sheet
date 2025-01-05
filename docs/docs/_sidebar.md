@@ -1,0 +1,77 @@
+<!-- docs/_sidebar.md -->
+
+* [Home](README.md)
+
+* Basics
+  * [MonoBehaviour](basics/monobehaviour.md)
+  * [Transform](basics/transform.md)
+  * [Vector3](basics/vector3.md)
+  * [Quaternion](basics/quaternion.md)
+  * [Euler Angles](basics/euler-angles.md)
+
+* Movement & Rotation
+  * [Move Object](movement-rotation/move-object.md)
+    * [Transform.Translate()](movement-rotation/move-object.md#transformtranslate)
+    * [Vector3.MoveTowards()](movement-rotation/move-object.md#vector3movetowards)
+    * [Vector3.Lerp()](movement-rotation/move-object.md#vector3lerp)
+    * [Vector3.SmoothDamp()](movement-rotation/move-object.md#vector3smoothdamp)
+  * [Rotate Object](movement-rotation/rotate-object.md)
+    * [Transform.rotation](movement-rotation/rotate-object.md#transformrotation)
+    * [Transform.eulerAngles](movement-rotation/rotate-object.md#transformeulerangles)
+    * [Transform.Rotate()](movement-rotation/rotate-object.md#transformrotate)
+    * [Transform.RotateAround()](movement-rotation/rotate-object.md#transformrotatearound)
+    * [Transform.LookAt()](movement-rotation/rotate-object.md#transformlookat)
+    * [Quaternion.LookRotation()](movement-rotation/rotate-object.md#quaternionlookrotation)
+    * [Quaternion.FromToRotation()](movement-rotation/rotate-object.md#quaternionfromtorotation)
+    * [Quaternion.ToAngleAxis()](movement-rotation/rotate-object.md#quaterniontoangleaxis)
+
+* Physics
+  * [Raycast](physics/raycast.md)
+  * [Ignore Collision](physics/ignore-collision.md)
+
+* Input
+  * [Keyboard](input/keyboard.md)
+  * [Mouse](input/mouse.md)
+  * [Touch](input/touch.md)
+
+* UI
+  * [Button](ui/button.md)
+  * [Slider](ui/slider.md)
+
+* Audio
+  * [Basic Audio Play](audio/basic-audio-play.md)
+
+* Scripting
+  * [Coroutines](scripting/coroutines.md)
+    * [Basic Coroutine Example](scripting/coroutines.md#basic-coroutine-example)
+    * [Using Coroutines for Repeated Actions](scripting/coroutines.md#using-coroutines-for-repeated-actions)
+    * [Waiting for a Condition](scripting/coroutines.md#waiting-for-a-condition)
+    * [Using Coroutines with Unity Events](scripting/coroutines.md#using-coroutines-with-unity-events)
+    * [Stopping Coroutines](scripting/coroutines.md#stopping-coroutines)
+    * [Important Notes](scripting/coroutines.md#important-notes)
+  * [Event Systems](scripting/event-systems.md)
+    * [UnityEvents](scripting/event-systems.md#unityevents)
+    * [C# Events and Delegates](scripting/event-systems.md#c-events-and-delegates)
+  * [Scriptable Objects](scripting/scriptable-objects.md)
+  * [Custom Editor Scripts](scripting/custom-editor-scripts.md)
+  * [Delegates and Events](scripting/delegates-and-events.md)
+
+* Design Patterns
+  * [Singleton](design-patterns/singleton.md)
+  * [Factory Pattern](design-patterns/factory-pattern.md)
+  * [Observer Pattern](design-patterns/observer-pattern.md)
+  * [Command Pattern](design-patterns/command-pattern.md)
+  * [State Pattern](design-patterns/state-pattern.md)
+    * [Basic Example](design-patterns/state-pattern.md#basic-example)
+  * [Strategy Pattern](design-patterns/strategy-pattern.md)
+    * [Basic Example](design-patterns/strategy-pattern.md#basic-example)
+  * [Object Pooling Pattern](design-patterns/object-pooling-pattern.md)
+  * [Chain of Responsibility Pattern](design-patterns/chain-of-responsibility-pattern.md)
+    * [Basic Example](design-patterns/chain-of-responsibility-pattern.md#basic-example)
+
+* Practical Use Cases
+  * [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
+  * [Get the transform of a Body Bone](practical-use-cases/get-the-transform-of-a-body-bone.md)
+  * [Make object look at the camera](practical-use-cases/make-object-look-at-the-camera.md)
+  * [Load next scene](practical-use-cases/load-next-scene.md)
+
