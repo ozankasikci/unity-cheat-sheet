@@ -240,7 +240,7 @@ function generateSidebar(sections: Section[]): string {
     sections.forEach(section => {
         content += `* ${section.title}\n`;
         section.subsections.forEach(subsection => {
-            content += `  * [${subsection.title}](docs/${section.slug}/${subsection.slug}.md)\n`;
+            content += `  * [${subsection.title}](${section.slug}/${subsection.slug}.md)\n`;
             
             // Extract level 4 headings from the content
             const level4Headings = subsection.content.match(/^####\s+(.+)$/gm);
@@ -251,7 +251,7 @@ function generateSidebar(sections: Section[]): string {
                     const anchor = title.toLowerCase()
                         .replace(/[^\w\s-]/g, '') // Remove special characters except whitespace and dash
                         .replace(/\s+/g, '-'); // Replace whitespace with dash
-                    content += `    * [${title}](docs/${section.slug}/${subsection.slug}.md#${anchor})\n`;
+                    content += `    * [${title}](${section.slug}/${subsection.slug}.md#${anchor})\n`;
                 });
             }
         });
