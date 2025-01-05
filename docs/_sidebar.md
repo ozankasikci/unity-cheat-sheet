@@ -48,7 +48,6 @@
     * [C# Events and Delegates](scripting/event-systems.md#c-events-and-delegates)
   * [Scriptable Objects](scripting/scriptable-objects.md)
   * [Custom Editor Scripts](scripting/custom-editor-scripts.md)
-  * [Delegates and Events](scripting/delegates-and-events.md)
 * Design Patterns
   * [Singleton](design-patterns/singleton.md)
   * [Factory Pattern](design-patterns/factory-pattern.md)

@@ -43,7 +43,6 @@ A comprehensive guide to Unity development patterns and practices.
 - [Event Systems](scripting/event-systems.md)
 - [Scriptable Objects](scripting/scriptable-objects.md)
 - [Custom Editor Scripts](scripting/custom-editor-scripts.md)
-- [Delegates and Events](scripting/delegates-and-events.md)
 
 ### Design Patterns
 

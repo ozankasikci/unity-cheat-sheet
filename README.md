@@ -40,7 +40,6 @@
   - [Event Systems](#event-systems)
   - [Scriptable Objects](#scriptable-objects)
   - [Custom Editor Scripts](#custom-editor-scripts)
-  - [Delegates and Events](#delegates-and-events)
 - [Design Patterns](#design-patterns)
   - [Singleton](#singleton)
   - [Factory Pattern](#factory-pattern)
