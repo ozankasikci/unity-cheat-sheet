@@ -9,3 +9,4 @@ Transform bullet;
 Transform ally;
 Physics.IgnoreCollision(bullet.GetComponent<Collider>(), ally.GetComponent<Collider>());
 ```
+

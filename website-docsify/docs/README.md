@@ -4,49 +4,48 @@ A comprehensive guide to Unity development patterns and practices.
 
 ## Table of Contents
 
-### [Table of Contents](table-of-contents/README.md)
+### Basics
 
-### [Basics](basics/README.md)
-
-- [[MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)](basics/monobehaviour.md)
-- [[Transform](https://docs.unity3d.com/ScriptReference/Transform.html)](basics/transform.md)
-- [[Vector3](https://docs.unity3d.com/ScriptReference/Vector3.html)](basics/vector3.md)
-- [[Quaternion](https://docs.unity3d.com/ScriptReference/Quaternion.html)](basics/quaternion.md)
+- [MonoBehaviour](basics/monobehaviour.md)
+- [Transform](basics/transform.md)
+- [Vector3](basics/vector3.md)
+- [Quaternion](basics/quaternion.md)
 - [Euler Angles](basics/euler-angles.md)
 
-### [Movement & Rotation](movement-rotation/README.md)
+### Movement & Rotation
 
 - [Move Object](movement-rotation/move-object.md)
 - [Rotate Object](movement-rotation/rotate-object.md)
 
-### [Physics](physics/README.md)
+### Physics
 
 - [Raycast](physics/raycast.md)
-- [IgnoreCollision](physics/ignorecollision.md)
+- [Ignore Collision](physics/ignore-collision.md)
 
-### [Input](input/README.md)
+### Input
 
 - [Keyboard](input/keyboard.md)
 - [Mouse](input/mouse.md)
 - [Touch](input/touch.md)
 
-### [UI](ui/README.md)
+### UI
 
 - [Button](ui/button.md)
 - [Slider](ui/slider.md)
 
-### [Audio](audio/README.md)
+### Audio
 
 - [Basic Audio Play](audio/basic-audio-play.md)
 
-### [Scripting](scripting/README.md)
+### Scripting
 
 - [Coroutines](scripting/coroutines.md)
 - [Event Systems](scripting/event-systems.md)
 - [Scriptable Objects](scripting/scriptable-objects.md)
 - [Custom Editor Scripts](scripting/custom-editor-scripts.md)
+- [Delegates and Events](scripting/delegates-and-events.md)
 
-### [Design Patterns](design-patterns/README.md)
+### Design Patterns
 
 - [Singleton](design-patterns/singleton.md)
 - [Factory Pattern](design-patterns/factory-pattern.md)
@@ -57,7 +56,7 @@ A comprehensive guide to Unity development patterns and practices.
 - [Object Pooling Pattern](design-patterns/object-pooling-pattern.md)
 - [Chain of Responsibility Pattern](design-patterns/chain-of-responsibility-pattern.md)
 
-### [Practical Use Cases](practical-use-cases/README.md)
+### Practical Use Cases
 
 - [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
 - [Get the transform of a Body Bone](practical-use-cases/get-the-transform-of-a-body-bone.md)

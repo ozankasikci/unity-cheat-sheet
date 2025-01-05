@@ -11,3 +11,4 @@ public class Data : ScriptableObject {
 // Usage
 Data myData = ScriptableObject.CreateInstance<Data>();
 ```
+

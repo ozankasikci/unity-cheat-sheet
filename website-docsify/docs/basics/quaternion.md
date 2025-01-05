@@ -1,4 +1,4 @@
-# [Quaternion](https://docs.unity3d.com/ScriptReference/Quaternion.html)
+# Quaternion
 
 ```csharp
 // A Quaternion stores the rotation of the Transform in world space.
@@ -9,3 +9,4 @@
 // A rotation 30 degrees around the y-axis
 Quaternion rotation = Quaternion.Euler(0, 30, 0);
 ```
+

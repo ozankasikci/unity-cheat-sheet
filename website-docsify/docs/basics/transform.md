@@ -1,4 +1,4 @@
-# [Transform](https://docs.unity3d.com/ScriptReference/Transform.html)
+# Transform
 
 ```csharp
 // Every object in a Scene has a Transform.
@@ -6,3 +6,4 @@
 
 transform.position.x = 0;
 ```
+

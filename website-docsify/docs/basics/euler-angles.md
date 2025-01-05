@@ -15,3 +15,4 @@ Quaternion rotation = Quaternion.Euler(EulerRotation);
 Quaternion quaternionAngles = transform.rotation;
 Vector3 eulerAngles = quaternionAngles.eulerAngles;
 ```
+

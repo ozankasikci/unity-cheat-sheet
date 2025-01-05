@@ -21,3 +21,4 @@ if (Input.GetMouseButtonDown(2)) {
     Debug.Log("Pressed middle click.");
 }
 ```
+

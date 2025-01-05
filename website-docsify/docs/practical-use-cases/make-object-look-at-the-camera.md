@@ -5,3 +5,4 @@ var camPosition = Camera.main.transform.position;
 
 transform.rotation = Quaternion.LookRotation(transform.position - camPosition);
 ```
+

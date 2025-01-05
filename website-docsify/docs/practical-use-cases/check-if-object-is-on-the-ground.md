@@ -8,3 +8,4 @@ if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.5f)) {
    Debug.log("Hit something below!");
 }
 ```
+
