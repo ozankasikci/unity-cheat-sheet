@@ -177,15 +177,17 @@ function findContentForSection(section: Section, fullContent: string): void {
 }
 
 function generateDocsifyFiles(sections: Section[]): void {
-    const docsDir = path.join(__dirname, '..', 'docs');
+    // Create the base docs directory
+    const baseDir = path.join(__dirname, '..');
+    const contentDir = path.join(baseDir, 'docs');
     
-    if (!fs.existsSync(docsDir)) {
-        fs.mkdirSync(docsDir, { recursive: true });
+    if (!fs.existsSync(contentDir)) {
+        fs.mkdirSync(contentDir, { recursive: true });
     }
 
     // Generate section files
     sections.forEach(section => {
-        const sectionDir = path.join(docsDir, section.slug);
+        const sectionDir = path.join(contentDir, section.slug);
         if (!fs.existsSync(sectionDir)) {
             fs.mkdirSync(sectionDir, { recursive: true });
         }
@@ -203,13 +205,13 @@ function generateDocsifyFiles(sections: Section[]): void {
         });
     });
 
-    // Generate _sidebar.md
+    // Generate _sidebar.md in the base directory
     const sidebarContent = generateSidebar(sections);
-    fs.writeFileSync(path.join(docsDir, '_sidebar.md'), sidebarContent);
+    fs.writeFileSync(path.join(baseDir, '_sidebar.md'), sidebarContent);
 
-    // Generate main README.md
+    // Generate main README.md in the base directory
     const mainReadme = generateMainReadme(sections);
-    fs.writeFileSync(path.join(docsDir, 'README.md'), mainReadme);
+    fs.writeFileSync(path.join(baseDir, 'README.md'), mainReadme);
 }
 
 function generateSectionContent(section: Section): string {
@@ -238,7 +240,7 @@ function generateSidebar(sections: Section[]): string {
     sections.forEach(section => {
         content += `* ${section.title}\n`;
         section.subsections.forEach(subsection => {
-            content += `  * [${subsection.title}](${section.slug}/${subsection.slug}.md)\n`;
+            content += `  * [${subsection.title}](docs/${section.slug}/${subsection.slug}.md)\n`;
             
             // Extract level 4 headings from the content
             const level4Headings = subsection.content.match(/^####\s+(.+)$/gm);
@@ -248,10 +250,8 @@ function generateSidebar(sections: Section[]): string {
                     // Create anchor that matches docsify's ID generation
                     const anchor = title.toLowerCase()
                         .replace(/[^\w\s-]/g, '') // Remove special characters except whitespace and dash
-                        .replace(/\s+/g, '-')     // Replace whitespace with dash
-                        .replace(/--+/g, '-')     // Replace multiple dashes with single dash
-                        .replace(/^-+|-+$/g, ''); // Remove leading/trailing dashes
-                    content += `    * [${title}](${section.slug}/${subsection.slug}.md#${anchor})\n`;
+                        .replace(/\s+/g, '-'); // Replace whitespace with dash
+                    content += `    * [${title}](docs/${section.slug}/${subsection.slug}.md#${anchor})\n`;
                 });
             }
         });
