@@ -18,12 +18,13 @@ function slugify(text: string): string {
             .replace(/(^-|-$)/g, '');
     }
 
-    // Handle normal text
+    // Handle normal text - preserve hyphens and spaces for header IDs
     return text
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/&/g, 'and')
-        .replace(/(^-|-$)/g, '');
+        .replace(/[^a-z0-9\s-]+/g, '') // Remove special chars except spaces and hyphens
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+        .replace(/(^-|-$)/g, ''); // Remove leading/trailing hyphens
 }
 
 function extractSectionContent(content: string, section: Section): void {
@@ -238,19 +239,16 @@ function generateSidebar(sections: Section[]): string {
             content += `  * [${subsection.title}](${section.slug}/${subsection.slug}.md)\n`;
             
             // Extract level 4 headings from the content
-            const level4Headings = subsection.content.match(/^####\s+(.+)$/gm);
-            if (level4Headings) {
-                level4Headings.forEach(heading => {
+            const headings = subsection.content.match(/^####\s+(.+)$/gm);
+            if (headings) {
+                headings.forEach(heading => {
                     const title = heading.replace('#### ', '');
-                    // Create anchor that matches docsify's ID generation
-                    const anchor = title.toLowerCase()
-                        .replace(/[^\w\s-]/g, '') // Remove special characters except whitespace and dash
-                        .replace(/\s+/g, '-'); // Replace whitespace with dash
+                    // Create anchor that matches the actual header ID
+                    const anchor = slugify(title);
                     content += `    * [${title}](${section.slug}/${subsection.slug}.md#${anchor})\n`;
                 });
             }
         });
-        content += '\n';
     });
 
     return content;

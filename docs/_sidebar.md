@@ -8,7 +8,6 @@
   * [Vector3](basics/vector3.md)
   * [Quaternion](basics/quaternion.md)
   * [Euler Angles](basics/euler-angles.md)
-
 * Movement & Rotation
   * [Move Object](movement-rotation/move-object.md)
     * [Transform.Translate()](movement-rotation/move-object.md#transformtranslate)
@@ -24,23 +23,18 @@
     * [Quaternion.LookRotation()](movement-rotation/rotate-object.md#quaternionlookrotation)
     * [Quaternion.FromToRotation()](movement-rotation/rotate-object.md#quaternionfromtorotation)
     * [Quaternion.ToAngleAxis()](movement-rotation/rotate-object.md#quaterniontoangleaxis)
-
 * Physics
   * [Raycast](physics/raycast.md)
   * [Ignore Collision](physics/ignore-collision.md)
-
 * Input
   * [Keyboard](input/keyboard.md)
   * [Mouse](input/mouse.md)
   * [Touch](input/touch.md)
-
 * UI
   * [Button](ui/button.md)
   * [Slider](ui/slider.md)
-
 * Audio
   * [Basic Audio Play](audio/basic-audio-play.md)
-
 * Scripting
   * [Coroutines](scripting/coroutines.md)
     * [Basic Coroutine Example](scripting/coroutines.md#basic-coroutine-example)
@@ -55,7 +49,6 @@
   * [Scriptable Objects](scripting/scriptable-objects.md)
   * [Custom Editor Scripts](scripting/custom-editor-scripts.md)
   * [Delegates and Events](scripting/delegates-and-events.md)
-
 * Design Patterns
   * [Singleton](design-patterns/singleton.md)
   * [Factory Pattern](design-patterns/factory-pattern.md)
@@ -63,18 +56,16 @@
   * [Command Pattern](design-patterns/command-pattern.md)
   * [State Pattern](design-patterns/state-pattern.md)
     * [Basic Example](design-patterns/state-pattern.md#basic-example)
-    * [Detailed Example](design-patterns/state-pattern.md#detailed-example)
+    * [Detailed Example - Game Onboarding System](design-patterns/state-pattern.md#detailed-example-game-onboarding-system)
   * [Strategy Pattern](design-patterns/strategy-pattern.md)
     * [Basic Example](design-patterns/strategy-pattern.md#basic-example)
-    * [Detailed Example](design-patterns/strategy-pattern.md#detailed-example)
+    * [Detailed Example - Combat System](design-patterns/strategy-pattern.md#detailed-example-combat-system)
   * [Object Pooling Pattern](design-patterns/object-pooling-pattern.md)
   * [Chain of Responsibility Pattern](design-patterns/chain-of-responsibility-pattern.md)
     * [Basic Example](design-patterns/chain-of-responsibility-pattern.md#basic-example)
-    * [Detailed Example](design-patterns/chain-of-responsibility-pattern.md#detailed-example)
-
+    * [Detailed Example - Input Handling System](design-patterns/chain-of-responsibility-pattern.md#detailed-example-input-handling-system)
 * Practical Use Cases
   * [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
   * [Get the transform of a Body Bone](practical-use-cases/get-the-transform-of-a-body-bone.md)
   * [Make object look at the camera](practical-use-cases/make-object-look-at-the-camera.md)
   * [Load next scene](practical-use-cases/load-next-scene.md)
-

@@ -34,6 +34,11 @@ public class StateMachine : MonoBehaviour {
 }
 ```
 
-#### Detailed Example
-See the [State Pattern - Onboarding Example](Patterns/StatePattern/README.md) for a complete example showing how to implement a game onboarding system using the State Pattern.
+#### Detailed Example - Game Onboarding System
+A complete example showing how to implement a game onboarding/tutorial system using the State Pattern. This implementation demonstrates how to:
+- Manage different tutorial states (movement, combat, inventory)
+- Handle state transitions
+- Track player progress through the tutorial
+
+👉 [View Full Implementation](Patterns/StatePattern/README.md)
 

@@ -47,9 +47,15 @@
   - [Observer Pattern](#observer-pattern)
   - [Command Pattern](#command-pattern)
   - [State Pattern](#state-pattern)
+    - [Basic Example](#basic-example)
+    - [Detailed Example - Game Onboarding System](#detailed-example---game-onboarding-system)
   - [Strategy Pattern](#strategy-pattern)
+    - [Basic Example](#basic-example-1)
+    - [Detailed Example - Combat System](#detailed-example---combat-system)
   - [Object Pooling Pattern](#object-pooling-pattern)
   - [Chain of Responsibility Pattern](#chain-of-responsibility-pattern)
+    - [Basic Example](#basic-example-2)
+    - [Detailed Example - Input Handling System](#detailed-example---input-handling-system)
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
@@ -865,8 +871,13 @@ public class StateMachine : MonoBehaviour {
 }
 ```
 
-#### Detailed Example
-See the [State Pattern - Onboarding Example](Patterns/StatePattern/README.md) for a complete example showing how to implement a game onboarding system using the State Pattern.
+#### Detailed Example - Game Onboarding System
+A complete example showing how to implement a game onboarding/tutorial system using the State Pattern. This implementation demonstrates how to:
+- Manage different tutorial states (movement, combat, inventory)
+- Handle state transitions
+- Track player progress through the tutorial
+
+👉 [View Full Implementation](Patterns/StatePattern/README.md)
 
 ### Strategy Pattern
 The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. This pattern lets the algorithm vary independently from clients that use it.
@@ -897,8 +908,13 @@ public class Character : MonoBehaviour {
 }
 ```
 
-#### Detailed Example
-See the [Strategy Pattern - Combat System Example](Patterns/StrategyPattern/README.md) for a complete example showing how to implement a combat system using the Strategy Pattern.
+#### Detailed Example - Combat System
+A complete example showing how to implement a flexible combat system using the Strategy Pattern. This implementation demonstrates how to:
+- Define different attack strategies (melee, ranged, area)
+- Switch between strategies at runtime
+- Encapsulate combat algorithms
+
+👉 [View Full Implementation](Patterns/StrategyPattern/README.md)
 
 ### Object Pooling Pattern
 ```csharp
@@ -1044,8 +1060,13 @@ public class InputManager : MonoBehaviour {
 }
 ```
 
-#### Detailed Example
-See the [Chain of Responsibility - Input Handling Example](Patterns/ChainOfResponsibility/README.md) for a complete example showing how to implement a game input handling system using the Chain of Responsibility Pattern.
+#### Detailed Example - Input Handling System
+A complete example showing how to implement a robust input handling system using the Chain of Responsibility Pattern. This implementation demonstrates how to:
+- Handle different types of input (UI, gameplay, cutscenes)
+- Process input based on game state
+- Chain multiple handlers together
+
+👉 [View Full Implementation](Patterns/ChainOfResponsibility/README.md)
 
 ## Practical Use Cases
 

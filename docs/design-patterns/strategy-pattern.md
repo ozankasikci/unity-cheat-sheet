@@ -28,6 +28,11 @@ public class Character : MonoBehaviour {
 }
 ```
 
-#### Detailed Example
-See the [Strategy Pattern - Combat System Example](Patterns/StrategyPattern/README.md) for a complete example showing how to implement a combat system using the Strategy Pattern.
+#### Detailed Example - Combat System
+A complete example showing how to implement a flexible combat system using the Strategy Pattern. This implementation demonstrates how to:
+- Define different attack strategies (melee, ranged, area)
+- Switch between strategies at runtime
+- Encapsulate combat algorithms
+
+👉 [View Full Implementation](Patterns/StrategyPattern/README.md)
 
