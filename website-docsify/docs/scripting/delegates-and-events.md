@@ -1,2 +1,0 @@
-# Delegates and Events
-
