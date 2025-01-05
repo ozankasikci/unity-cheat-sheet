@@ -2,10 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Unity Cheat Sheet</title>
+  <title>Unity Cheat Sheet - Complete Guide to Unity Development Patterns and Practices</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Unity Cheat Sheet">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Unity Cheat Sheet - A Guide to Unity Development Patterns and Practices">
+  <meta name="description" content="A comprehensive guide to Unity game development, including design patterns, best practices, code examples, and practical use cases for game developers.">
+  <meta name="keywords" content="unity, game development, design patterns, unity3d, c#, programming, game design, unity tutorial, unity guide">
+  <meta name="author" content="Ozan Kasikci">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ozankasikci.github.io/unity-cheat-sheet/">
+  <meta property="og:title" content="Unity Cheat Sheet - Complete Guide to Unity Development Patterns and Practices">
+  <meta property="og:description" content="A comprehensive guide to Unity game development, including design patterns, best practices, code examples, and practical use cases for game developers.">
+  <meta property="og:image" content="https://ozankasikci.github.io/unity-cheat-sheet/assets/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ozankasikci.github.io/unity-cheat-sheet/">
+  <meta property="twitter:title" content="Unity Cheat Sheet - Complete Guide to Unity Development Patterns and Practices">
+  <meta property="twitter:description" content="A comprehensive guide to Unity game development, including design patterns, best practices, code examples, and practical use cases for game developers.">
+  <meta property="twitter:image" content="https://ozankasikci.github.io/unity-cheat-sheet/assets/og-image.png">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="canonical" href="https://ozankasikci.github.io/unity-cheat-sheet/">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
   <!-- Favicons -->
@@ -16,6 +38,34 @@
   <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#000000">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
+
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechnicalArticle",
+      "headline": "Unity Cheat Sheet - Complete Guide to Unity Development Patterns and Practices",
+      "description": "A comprehensive guide to Unity game development, including design patterns, best practices, code examples, and practical use cases for game developers.",
+      "author": {
+        "@type": "Person",
+        "name": "Ozan Kasikci"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Unity Cheat Sheet",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ozankasikci.github.io/unity-cheat-sheet/assets/favicon/android-chrome-512x512.png"
+        }
+      },
+      "datePublished": "2023-01-01",
+      "dateModified": "2024-01-21",
+      "image": "https://ozankasikci.github.io/unity-cheat-sheet/assets/og-image.png",
+      "url": "https://ozankasikci.github.io/unity-cheat-sheet/",
+      "programmingLanguage": ["C#", "Unity"],
+      "about": ["Game Development", "Unity3D", "Design Patterns", "Programming"]
+    }
+  </script>
 </head>
 <body>
   <div id="app"></div>
@@ -47,13 +97,46 @@
   <script>
     window.$docsify = {
       name: 'Unity Cheat Sheet',
-      repo: '',
+      repo: 'ozankasikci/unity-cheat-sheet',
       loadSidebar: true,
       subMaxLevel: 3,
       auto2top: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Search Unity Cheat Sheet',
+        noData: 'No Results Found',
+        depth: 6,
+        hideOtherSidebarContent: false,
+      },
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      copyCode: {
+        buttonText: 'Copy',
+        errorText: 'Error',
+        successText: 'Copied!'
+      },
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function(html) {
+            return html;
+          });
+        }
+      ]
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
 </body>
 </html> 
