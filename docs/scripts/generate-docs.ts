@@ -9,6 +9,8 @@ interface Section {
     link?: string;
 }
 
+const GITHUB_REPO_URL = 'https://github.com/ozankasikci/unity-cheat-sheet/tree/master';
+
 function slugify(text: string): string {
     // Handle URLs in the text
     if (text.includes('http')) {
@@ -166,15 +168,29 @@ function findContentForSection(section: Section, fullContent: string): void {
     // Extract content after the heading
     const contentAfterHeading = sectionContent.substring(headingLevel.length + section.title.length + 1).trim();
     
-    // If there's content, set it
+    // If there's content, set it and adjust pattern links
     if (contentAfterHeading) {
-        section.content = contentAfterHeading;
+        section.content = adjustPatternLinks(contentAfterHeading);
     }
 
     // Recursively process subsections
     section.subsections.forEach(subsection => {
         findContentForSection(subsection, fullContent);
+        // Adjust pattern links in subsection content
+        if (subsection.content) {
+            subsection.content = adjustPatternLinks(subsection.content);
+        }
     });
+}
+
+function adjustPatternLinks(content: string): string {
+    // Replace pattern implementation links to point to GitHub repo
+    return content.replace(
+        /\[([^\]]+)\]\(Patterns\/([^)]+)\)/g,
+        (match, text, path) => {
+            return `[${text}](${GITHUB_REPO_URL}/Patterns/${path})`;
+        }
+    );
 }
 
 function generateDocsifyFiles(sections: Section[]): void {
@@ -193,7 +209,8 @@ function generateDocsifyFiles(sections: Section[]): void {
             let content = `# ${subsection.title}\n\n`;
             
             if (subsection.content) {
-                content += `${subsection.content}\n\n`;
+                // Adjust pattern links to point to GitHub
+                content += `${adjustPatternLinks(subsection.content)}\n\n`;
             }
 
             const fileName = `${subsection.slug}.md`;

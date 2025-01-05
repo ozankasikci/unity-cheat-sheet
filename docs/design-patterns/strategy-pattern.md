@@ -34,5 +34,5 @@ A complete example showing how to implement a flexible combat system using the S
 - Switch between strategies at runtime
 - Encapsulate combat algorithms
 
-👉 [View Full Implementation](Patterns/StrategyPattern/README.md)
+👉 [View Full Implementation](https://github.com/ozankasikci/unity-cheat-sheet/tree/master/Patterns/StrategyPattern/README.md)
 

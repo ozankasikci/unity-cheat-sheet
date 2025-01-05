@@ -40,5 +40,5 @@ A complete example showing how to implement a game onboarding/tutorial system us
 - Handle state transitions
 - Track player progress through the tutorial
 
-👉 [View Full Implementation](Patterns/StatePattern/README.md)
+👉 [View Full Implementation](https://github.com/ozankasikci/unity-cheat-sheet/tree/master/Patterns/StatePattern/README.md)
 

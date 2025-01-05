@@ -77,5 +77,5 @@ A complete example showing how to implement a robust input handling system using
 - Process input based on game state
 - Chain multiple handlers together
 
-👉 [View Full Implementation](Patterns/ChainOfResponsibility/README.md)
+👉 [View Full Implementation](https://github.com/ozankasikci/unity-cheat-sheet/tree/master/Patterns/ChainOfResponsibility/README.md)
 
