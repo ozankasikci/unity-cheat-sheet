@@ -57,7 +57,7 @@
     - [Detailed Example - Input Handling System](#detailed-example---input-handling-system)
 - [Shortcuts](#shortcuts)
   - [Scene View Editing](#scene-view-editing)
-  - [Scene View Navigation](#scene-view-navigation) 
+  - [Scene View Navigation](#scene-view-navigation)
   - [Hierarchy Management](#hierarchy-management)
   - [Layout](#layout)
 - [Practical Use Cases](#practical-use-cases)
@@ -65,6 +65,9 @@
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
   - [Make object look at the camera](#make-object-look-at-the-camera)
   - [Load next scene](#load-next-scene)
+- [TBD (To Be Documented)](#tbd-to-be-documented)
+  - [Input](#input-1)
+  - [Scripting](#scripting-1)
 
 ## Basics
 
@@ -1173,3 +1176,22 @@ var totalSceneCount = SceneManager.sceneCountInBuildSettings;
 if (nextSceneToLoad < totalSceneCount) {
   SceneManager.LoadScene(nextSceneToLoad);
 }
+```
+
+## TBD (To Be Documented)
+
+The following topics are planned to be added to the documentation:
+
+### Input
+- [ ] New Input System
+  - [ ] Input Actions
+  - [ ] Input Action Assets
+  - [ ] Player Input Component
+  - [ ] Input System Events
+
+### Scripting
+- [ ] Async/Await in Unity
+  - [ ] Awaitables
+  - [ ] Async Operations
+  - [ ] Custom Awaitables
+  - [ ] Best Practices
