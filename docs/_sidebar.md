@@ -63,6 +63,11 @@
   * [Chain of Responsibility Pattern](design-patterns/chain-of-responsibility-pattern.md)
     * [Basic Example](design-patterns/chain-of-responsibility-pattern.md#basic-example)
     * [Detailed Example - Input Handling System](design-patterns/chain-of-responsibility-pattern.md#detailed-example-input-handling-system)
+* Shortcuts
+  * [Scene View Editing](shortcuts/scene-view-editing.md)
+  * [Scene View Navigation](shortcuts/scene-view-navigation.md)
+  * [Hierarchy Management](shortcuts/hierarchy-management.md)
+  * [Layout](shortcuts/layout.md)
 * Practical Use Cases
   * [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
   * [Get the transform of a Body Bone](practical-use-cases/get-the-transform-of-a-body-bone.md)

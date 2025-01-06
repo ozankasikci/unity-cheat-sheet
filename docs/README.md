@@ -55,6 +55,13 @@ A comprehensive guide to Unity development patterns and practices.
 - [Object Pooling Pattern](design-patterns/object-pooling-pattern.md)
 - [Chain of Responsibility Pattern](design-patterns/chain-of-responsibility-pattern.md)
 
+### Shortcuts
+
+- [Scene View Editing](shortcuts/scene-view-editing.md)
+- [Scene View Navigation](shortcuts/scene-view-navigation.md)
+- [Hierarchy Management](shortcuts/hierarchy-management.md)
+- [Layout](shortcuts/layout.md)
+
 ### Practical Use Cases
 
 - [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
