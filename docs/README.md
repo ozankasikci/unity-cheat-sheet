@@ -40,6 +40,7 @@ A comprehensive guide to Unity development patterns and practices.
 ### Scripting
 
 - [Coroutines](scripting/coroutines.md)
+- [Async/Await](scripting/asyncawait.md)
 - [Event Systems](scripting/event-systems.md)
 - [Scriptable Objects](scripting/scriptable-objects.md)
 - [Custom Editor Scripts](scripting/custom-editor-scripts.md)
