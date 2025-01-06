@@ -55,6 +55,11 @@
   - [Chain of Responsibility Pattern](#chain-of-responsibility-pattern)
     - [Basic Example](#basic-example-2)
     - [Detailed Example - Input Handling System](#detailed-example---input-handling-system)
+- [Shortcuts](#shortcuts)
+  - [Scene View Editing](#scene-view-editing)
+  - [Scene View Navigation](#scene-view-navigation) 
+  - [Hierarchy Management](#hierarchy-management)
+  - [Layout](#layout)
 - [Practical Use Cases](#practical-use-cases)
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
@@ -1066,6 +1071,51 @@ A complete example showing how to implement a robust input handling system using
 - Chain multiple handlers together
 
 👉 [View Full Implementation](Patterns/ChainOfResponsibility/README.md)
+
+## Shortcuts
+
+### Scene View Editing
+```
+Q - Pan tool
+W - Move tool
+E - Rotate tool
+R - Scale tool
+T - Rect tool
+Y - Transform tool
+
+CTRL/CMD + Z - Undo
+CTRL/CMD + Y - Redo
+CTRL/CMD + S - Save
+CTRL/CMD + P - Play/Stop
+CTRL/CMD + SHIFT + P - Pause
+```
+
+### Scene View Navigation
+```
+Alt + Left Click - Orbit around scene view pivot
+Alt + Right Click - Zoom in/out
+Middle Mouse - Orbit
+Middle Mouse + Alt - Zoom
+F - Focus on selected object
+CTRL/CMD + ALT + F - Frame selected
+Hold Right Click - Free look (FPS style)
+```
+
+### Hierarchy Management
+```
+CTRL/CMD + SHIFT + N - Create empty GameObject
+ALT + SHIFT + N - Create empty child GameObject
+CTRL/CMD + D - Duplicate selected
+CTRL/CMD + ALT + F - Frame selected object
+F2 - Rename selected
+Delete - Delete selected
+```
+
+### Layout
+```
+CTRL/CMD + 1-5 - Switch between layouts
+SHIFT + Space - Toggle maximize current window
+```
 
 ## Practical Use Cases
 
