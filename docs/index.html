@@ -103,6 +103,7 @@
       color: #42b983;
       font-weight: 600;
       transition: color 0.3s;
+      margin-top: 10px;
     }
     .markdown-section a[href*="github.com/ozankasikci/unity-cheat-sheet/blob/master"]:hover {
       color: #3aa876;
@@ -142,7 +143,7 @@
           hook.beforeEach(function(html) {
             var url = 'https://github.com/ozankasikci/unity-cheat-sheet/blob/master/docs/' + vm.route.file;
             var editHtml = '[:memo: Edit Document on GitHub](' + url + ')\n';
-            return editHtml + html;
+            return html + '\n\n\n' + editHtml;
           });
         }
       ],
