@@ -193,6 +193,32 @@ function adjustPatternLinks(content: string): string {
     );
 }
 
+function contentHasChanged(existingContent: string, newContent: string): boolean {
+    // Normalize line endings and whitespace to ensure consistent comparison
+    const normalizeContent = (content: string) => 
+        content.replace(/\r\n/g, '\n').trim();
+    
+    return normalizeContent(existingContent) !== normalizeContent(newContent);
+}
+
+function writeFileIfChanged(filePath: string, newContent: string): void {
+    try {
+        // Check if file exists and read its content
+        let shouldWrite = true;
+        if (fs.existsSync(filePath)) {
+            const existingContent = fs.readFileSync(filePath, 'utf8');
+            shouldWrite = contentHasChanged(existingContent, newContent);
+        }
+
+        // Only write if content has changed or file doesn't exist
+        if (shouldWrite) {
+            fs.writeFileSync(filePath, newContent);
+        }
+    } catch (error) {
+        console.error(`Error handling file ${filePath}:`, error);
+    }
+}
+
 function generateDocsifyFiles(sections: Section[]): void {
     // Create the base docs directory
     const baseDir = path.join(__dirname, '..');
@@ -214,17 +240,17 @@ function generateDocsifyFiles(sections: Section[]): void {
             }
 
             const fileName = `${subsection.slug}.md`;
-            fs.writeFileSync(path.join(sectionDir, fileName), content);
+            writeFileIfChanged(path.join(sectionDir, fileName), content);
         });
     });
 
     // Generate _sidebar.md in the base directory
     const sidebarContent = generateSidebar(sections);
-    fs.writeFileSync(path.join(baseDir, '_sidebar.md'), sidebarContent);
+    writeFileIfChanged(path.join(baseDir, '_sidebar.md'), sidebarContent);
 
     // Generate main README.md in the base directory
     const mainReadme = generateMainReadme(sections);
-    fs.writeFileSync(path.join(baseDir, 'README.md'), mainReadme);
+    writeFileIfChanged(path.join(baseDir, 'README.md'), mainReadme);
 }
 
 function generateSectionContent(section: Section): string {

@@ -1125,7 +1125,7 @@ SHIFT + Space - Toggle maximize current window
 RaycastHit hit;
 
 // Unlike this example, most of the time you should pass a layerMask as the last option to hit only to the ground
-if (Physics.Raycast(transform.position, -Vector3.up, out hit, 0.5f)) {
+if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.5f)) {
    Debug.log("Hit something below!");
 }
 ```
