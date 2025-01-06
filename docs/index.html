@@ -95,6 +95,18 @@
         animation: octocat-wave 560ms ease-in-out;
       }
     }
+
+    /* Edit link styling */
+    .markdown-section a[href*="github.com/ozankasikci/unity-cheat-sheet/blob/master"] {
+      float: right;
+      text-decoration: none;
+      color: #42b983;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .markdown-section a[href*="github.com/ozankasikci/unity-cheat-sheet/blob/master"]:hover {
+      color: #3aa876;
+    }
   </style>
   <script>
     window.$docsify = {
@@ -128,7 +140,9 @@
       plugins: [
         function(hook, vm) {
           hook.beforeEach(function(html) {
-            return html;
+            var url = 'https://github.com/ozankasikci/unity-cheat-sheet/blob/master/docs/' + vm.route.file;
+            var editHtml = '[:memo: Edit Document on GitHub](' + url + ')\n';
+            return editHtml + html;
           });
         }
       ],
