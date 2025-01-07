@@ -861,7 +861,7 @@ public class SingletonClass: MonoBehaviour {
         }
     }
 
-    private void SomeFunction() {
+    public void SomeFunction() {
     }
 }
 
