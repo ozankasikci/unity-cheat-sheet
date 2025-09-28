@@ -147,6 +147,14 @@
         errorText: 'Error',
         successText: 'Copied!'
       },
+      lastUpdated: {
+        text: 'Last updated: {date}',
+        format: 'YYYY/MM/DD',
+        branch: 'master',
+        path: 'docs',
+        placeholder: 'Loading...',
+        fallbackText: 'Unknown'
+      },
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
@@ -184,7 +192,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
+  <script src="assets/js/last-updated.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
 </body>
 </html> 
