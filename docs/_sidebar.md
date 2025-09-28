@@ -81,6 +81,7 @@
   * [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
   * [Get the transform of a Body Bone](practical-use-cases/get-the-transform-of-a-body-bone.md)
   * [Make object look at the camera](practical-use-cases/make-object-look-at-the-camera.md)
+  * [Camera follow & orbit](practical-use-cases/camera-follow-orbit.md)
   * [Load next scene](practical-use-cases/load-next-scene.md)
 * TBD (To Be Documented)
   * [Input](tbd-to-be-documented/input.md)
