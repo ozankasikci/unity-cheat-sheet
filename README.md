@@ -72,6 +72,8 @@
   - [Check if object is on the ground](#check-if-object-is-on-the-ground)
   - [Get the transform of a Body Bone](#get-the-transform-of-a-body-bone)
   - [Make object look at the camera](#make-object-look-at-the-camera)
+  - [Camera follow & orbit](#camera-follow--orbit)
+  - [Fade UI element](#fade-ui-element)
   - [Load next scene](#load-next-scene)
 - [TBD (To Be Documented)](#tbd-to-be-documented)
   - [Input](#input-1)
@@ -1347,6 +1349,41 @@ Transform transform = animator.GetBoneTransform(HumanBodyBones.Head);
 var camPosition = Camera.main.transform.position;
 
 transform.rotation = Quaternion.LookRotation(transform.position - camPosition);
+```
+
+### Camera follow & orbit
+
+[Full example](docs/practical-use-cases/camera-follow-orbit.md) – smooth follow using `Vector3.SmoothDamp` while orbiting via yaw/pitch input.
+
+```csharp
+// Accumulate yaw/pitch input
+yaw += lookInput.x * orbitSpeed * Time.deltaTime;
+pitch = Mathf.Clamp(pitch - lookInput.y * orbitSpeed * Time.deltaTime, pitchLimits.x, pitchLimits.y);
+
+// Build rotation and place camera
+Quaternion rotation = Quaternion.AngleAxis(yaw, Vector3.up) * Quaternion.AngleAxis(pitch, Vector3.right);
+Vector3 desiredPosition = target.position + rotation * followOffset;
+transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, followSmoothTime);
+transform.rotation = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
+```
+
+### Fade UI element
+
+[Full example](docs/practical-use-cases/fade-ui-element.md) – coroutine-driven `CanvasGroup` fade for prompts and HUD panels.
+
+```csharp
+IEnumerator Fade(CanvasGroup group, float targetAlpha, float duration)
+{
+    float start = group.alpha;
+    float time = 0f;
+    while (time < duration)
+    {
+        time += Time.unscaledDeltaTime;
+        group.alpha = Mathf.Lerp(start, targetAlpha, time / duration);
+        yield return null;
+    }
+    group.alpha = targetAlpha;
+}
 ```
 
 ### Load next scene
