@@ -69,9 +69,28 @@ A comprehensive guide to Unity development patterns and practices.
 - [Check if object is on the ground](practical-use-cases/check-if-object-is-on-the-ground.md)
 - [Get the transform of a Body Bone](practical-use-cases/get-the-transform-of-a-body-bone.md)
 - [Make object look at the camera](practical-use-cases/make-object-look-at-the-camera.md)
+- [Camera follow & orbit](practical-use-cases/camera-follow-orbit.md)
+- [Fade UI element](practical-use-cases/fade-ui-element.md)
 - [Load next scene](practical-use-cases/load-next-scene.md)
 
 ### TBD (To Be Documented)
 
 - [Input](tbd-to-be-documented/input.md)
 - [Scripting](tbd-to-be-documented/scripting.md)
+
+## Featured Basics
+
+- [`Vector3`: math helpers, dot/cross recipes, normalization tips](basics/vector3.md)
+- [`Quaternion`: rotation factories, composition, interpolation guidance](basics/quaternion.md)
+- [`Euler Angles`: inspector editing, conversions, pitfalls to avoid](basics/euler-angles.md)
+- [`Transform`: positioning, rotation, scaling, and hierarchy utilities](basics/transform.md)
+
+## Practical Use Case Highlights
+
+- [`Check if object is on the ground`](practical-use-cases/check-if-object-is-on-the-ground.md) – Layer-masked raycast grounded check.
+- [`Camera follow & orbit`](practical-use-cases/camera-follow-orbit.md) – Smooth follow camera with orbit input.
+- [`Fade UI element`](practical-use-cases/fade-ui-element.md) – Coroutine-driven `CanvasGroup` fades.
+- [`Make object look at the camera`](practical-use-cases/make-object-look-at-the-camera.md) – Billboard behaviour with optional axis locking.
+- [`Load next scene`](practical-use-cases/load-next-scene.md) – Safe next-scene loader with index guard.
+- [`Get the transform of a Body Bone`](practical-use-cases/get-the-transform-of-a-body-bone.md) – Attach items to humanoid bones.
+
