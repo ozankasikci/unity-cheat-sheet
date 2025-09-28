@@ -19,6 +19,7 @@ A comprehensive guide to Unity development patterns and practices.
 
 ### Physics
 
+- [Rigidbody](physics/rigidbody.md)
 - [Raycast](physics/raycast.md)
 - [Ignore Collision](physics/ignore-collision.md)
 
@@ -74,4 +75,3 @@ A comprehensive guide to Unity development patterns and practices.
 
 - [Input](tbd-to-be-documented/input.md)
 - [Scripting](tbd-to-be-documented/scripting.md)
-
