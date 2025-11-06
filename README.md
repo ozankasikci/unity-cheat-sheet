@@ -1407,3 +1407,10 @@ The following topics are planned to be added to the documentation:
   - [ ] Input Action Assets
   - [ ] Player Input Component
   - [ ] Input System Events
+
+---
+
+<div align="center">
+  <img src="docs/assets/images/longhorn-logo.png" alt="" width="120">
+  <p><em>Built with ❤️ by <a href="https://longhorn.games/">Longhorn Games</a></em></p>
+</div>
