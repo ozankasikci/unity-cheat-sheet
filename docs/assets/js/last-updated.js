@@ -143,7 +143,7 @@
     if (!element) {
       return;
     }
-    element.textContent = text.replace('{date}', value);
+    element.innerHTML = text.replace('{date}', value);
   }
 
   window.$docsify = window.$docsify || {};
