@@ -25,6 +25,7 @@
     - [Quaternion.ToAngleAxis()](#quaterniontoangleaxis)
 - [Physics](#physics)
   - [Raycast](#raycast)
+  - [Collisions & Triggers](#collisions--triggers)
   - [Ignore Collision](#ignorecollision)
 - [Input](#input)
   - [Keyboard](#keyboard)
@@ -311,6 +312,63 @@ void FixedUpdate() {
     }
 }
 ```
+
+### Collisions & Triggers
+
+> For the complete guide with collision matrix, 2D events, and common patterns, see [Collisions & Triggers](docs/physics/collisions.md)
+
+#### Collision Events (Physics Response)
+
+```csharp
+// Called when collision begins
+void OnCollisionEnter(Collision collision)
+{
+    Debug.Log("Hit: " + collision.gameObject.name);
+    
+    // Access collision details
+    Vector3 impactVelocity = collision.relativeVelocity;
+    ContactPoint contact = collision.GetContact(0);
+    Vector3 hitPoint = contact.point;
+}
+
+// Called every frame during collision
+void OnCollisionStay(Collision collision) { }
+
+// Called when collision ends
+void OnCollisionExit(Collision collision) { }
+```
+
+#### Trigger Events (No Physics Response)
+
+```csharp
+// Called when entering trigger (requires "Is Trigger" checked on collider)
+void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player"))
+    {
+        // Pickup item, enter zone, etc.
+        Destroy(gameObject);
+    }
+}
+
+// Called every frame while inside trigger
+void OnTriggerStay(Collider other) { }
+
+// Called when exiting trigger
+void OnTriggerExit(Collider other) { }
+```
+
+#### 2D Equivalents
+```csharp
+void OnCollisionEnter2D(Collision2D collision) { }
+void OnTriggerEnter2D(Collider2D other) { }
+// Also: OnCollisionStay2D, OnCollisionExit2D, OnTriggerStay2D, OnTriggerExit2D
+```
+
+#### Requirements
+- Both objects need a **Collider** (or Collider2D)
+- At least one object needs a **Rigidbody** (or Rigidbody2D)
+- For triggers: Check **"Is Trigger"** on at least one collider
 
 ### Ignore Collision
 ```csharp

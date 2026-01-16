@@ -20,6 +20,7 @@ A comprehensive guide to Unity development patterns and practices.
 ### Physics
 
 - [Rigidbody](physics/rigidbody.md)
+- [Collisions & Triggers](physics/collisions.md)
 - [Raycast](physics/raycast.md)
 - [Ignore Collision](physics/ignore-collision.md)
 
