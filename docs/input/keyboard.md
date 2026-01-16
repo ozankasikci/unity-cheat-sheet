@@ -1,5 +1,7 @@
 # Keyboard
 
+> **Note:** This page covers the **Legacy Input Manager**. For Unity 6+ projects, see the [New Input System](new-input-system.md) which is now the standard.
+
 ```csharp
 // Returns true during the frame the user starts pressing down the key
 if (Input.GetKeyDown(KeyCode.Space)) {

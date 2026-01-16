@@ -31,6 +31,11 @@
   * [Keyboard](input/keyboard.md)
   * [Mouse](input/mouse.md)
   * [Touch](input/touch.md)
+  * [New Input System](input/new-input-system.md)
+    * [Direct Device Access](input/new-input-system.md#direct-device-access)
+    * [Input Actions](input/new-input-system.md#input-actions)
+    * [Using in Code](input/new-input-system.md#using-input-actions-in-code)
+    * [Runtime Rebinding](input/new-input-system.md#runtime-rebinding)
 * UI
   * [Button](ui/button.md)
   * [Slider](ui/slider.md)

@@ -30,6 +30,7 @@
   - [Keyboard](#keyboard)
   - [Mouse](#mouse)
   - [Touch](#touch)
+  - [New Input System](#new-input-system)
 - [UI](#ui)
   - [Button](#button)
   - [Slider](#slider)
@@ -76,7 +77,6 @@
   - [Fade UI element](#fade-ui-element)
   - [Load next scene](#load-next-scene)
 - [TBD (To Be Documented)](#tbd-to-be-documented)
-  - [Input](#input-1)
   - [Scripting](#scripting-1)
 
 ## Basics
@@ -378,6 +378,79 @@ if (Input.touchCount > 0) {
 
     if (touch.phase == TouchPhase.Ended) {
         Debug.Log("Touch ended");
+    }
+}
+```
+
+### New Input System
+
+The Input System package is the **standard for Unity 6** and recommended for all new projects. It provides flexible, multi-device input handling with runtime rebinding support.
+
+> For the complete guide with all examples, see [New Input System](docs/input/new-input-system.md)
+
+#### Quick Setup
+```
+Window > Package Manager > Unity Registry > Input System > Install
+Edit > Project Settings > Player > Active Input Handling > Input System Package (New)
+```
+
+#### Direct Device Access
+```csharp
+using UnityEngine.InputSystem;
+
+// Keyboard
+if (Keyboard.current.spaceKey.wasPressedThisFrame) {
+    Debug.Log("Space pressed");
+}
+
+// Mouse
+Vector2 mousePos = Mouse.current.position.ReadValue();
+if (Mouse.current.leftButton.wasPressedThisFrame) {
+    Debug.Log("Left click at " + mousePos);
+}
+
+// Gamepad (always check for null!)
+if (Gamepad.current != null) {
+    Vector2 leftStick = Gamepad.current.leftStick.ReadValue();
+    if (Gamepad.current.buttonSouth.wasPressedThisFrame) {
+        Debug.Log("A/Cross button pressed");
+    }
+}
+```
+
+#### Using Input Actions (Recommended)
+```csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerController : MonoBehaviour
+{
+    [SerializeField] private InputActionReference moveAction;
+    [SerializeField] private InputActionReference jumpAction;
+
+    void OnEnable()
+    {
+        moveAction.action.Enable();
+        jumpAction.action.Enable();
+        jumpAction.action.performed += OnJump;
+    }
+
+    void OnDisable()
+    {
+        jumpAction.action.performed -= OnJump;
+        moveAction.action.Disable();
+        jumpAction.action.Disable();
+    }
+
+    void Update()
+    {
+        Vector2 move = moveAction.action.ReadValue<Vector2>();
+        transform.Translate(move.x * Time.deltaTime, 0, move.y * Time.deltaTime);
+    }
+
+    void OnJump(InputAction.CallbackContext context)
+    {
+        Debug.Log("Jump!");
     }
 }
 ```
@@ -1401,12 +1474,8 @@ if (nextSceneToLoad < totalSceneCount) {
 
 The following topics are planned to be added to the documentation:
 
-### Input
-- [ ] New Input System
-  - [ ] Input Actions
-  - [ ] Input Action Assets
-  - [ ] Player Input Component
-  - [ ] Input System Events
+### Scripting
+- [ ] More advanced scripting topics coming soon
 
 ---
 

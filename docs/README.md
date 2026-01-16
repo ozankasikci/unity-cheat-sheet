@@ -28,6 +28,7 @@ A comprehensive guide to Unity development patterns and practices.
 - [Keyboard](input/keyboard.md)
 - [Mouse](input/mouse.md)
 - [Touch](input/touch.md)
+- [New Input System](input/new-input-system.md)
 
 ### UI
 
