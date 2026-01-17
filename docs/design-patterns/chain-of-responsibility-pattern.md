@@ -1,4 +1,4 @@
-# Chain of Responsibility Pattern
+# Unity Chain of Responsibility Pattern - Request Handling
 
 The Chain of Responsibility pattern creates a chain of handler objects for a request. Each handler contains a reference to the next handler in the chain and decides either to handle the request or pass it to the next handler.
 

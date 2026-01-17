@@ -1,4 +1,4 @@
-# Hierarchy Management
+# Unity Hierarchy Management Shortcuts
 
 ```
 CTRL/CMD + SHIFT + N - Create empty GameObject

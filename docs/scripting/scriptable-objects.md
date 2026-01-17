@@ -1,4 +1,4 @@
-# Scriptable Objects
+# Unity Scriptable Objects - Data Containers Guide
 
 ```csharp
 // ScriptableObjects are data containers that you can use to save large amounts of data, independent of class instances.

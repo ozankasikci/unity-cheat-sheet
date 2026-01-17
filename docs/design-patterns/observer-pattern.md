@@ -1,4 +1,4 @@
-# Observer Pattern
+# Unity Observer Pattern - Event-Driven Architecture
 
 ```csharp
 // Observer interface

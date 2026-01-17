@@ -1,4 +1,4 @@
-# Singleton
+# Unity Singleton Pattern - Global Instance Access
 
 ```csharp
 // Define singleton class

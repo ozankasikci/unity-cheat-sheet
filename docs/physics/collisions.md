@@ -1,4 +1,4 @@
-# Collisions & Triggers
+# Unity Collisions and Triggers - OnCollisionEnter and OnTriggerEnter
 
 Unity provides two types of collision detection: **Collisions** (physics-based) and **Triggers** (overlap detection).
 

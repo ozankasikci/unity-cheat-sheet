@@ -1,4 +1,4 @@
-# Fade UI element
+# Unity Fade UI Element - CanvasGroup Alpha Animation
 
 Smoothly show or hide world-space prompts, HUD panels, or tooltips by lerping a `CanvasGroup` alpha. Coroutines or tweens control the timing without needing a full animation clip.
 

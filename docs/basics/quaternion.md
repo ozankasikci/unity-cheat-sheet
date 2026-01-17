@@ -1,4 +1,4 @@
-# Quaternion
+# Unity Quaternion - 3D Rotation Explained
 
 Quaternions represent 3D rotations without the gimbal lock issues of Euler angles. Unity stores every `Transform` rotation as a quaternion, so understanding the common factory methods and helpers lets you aim objects, blend motion, and compose complex orientations safely.
 

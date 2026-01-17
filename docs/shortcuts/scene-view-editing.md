@@ -1,4 +1,4 @@
-# Scene View Editing
+# Unity Scene View Editing Shortcuts
 
 ```
 Q - Pan tool

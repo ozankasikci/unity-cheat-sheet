@@ -1,4 +1,4 @@
-# Custom Editor Scripts
+# Unity Custom Editor Scripts - Inspector Extensions
 
 ```csharp
 // Custom Editor scripts allow you to create custom inspectors and windows in the Unity Editor.

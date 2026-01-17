@@ -1,4 +1,4 @@
-# Rigidbody
+# Unity Rigidbody - Physics Component Guide
 
 Rigidbodies give GameObjects mass, gravity, and collision response within Unity's 3D physics engine. They are the backbone of any simulation where forces, impulses, and realistic motion matter—from falling props to fully simulated characters. Understanding how to configure and drive them keeps gameplay responsive and stable.
 

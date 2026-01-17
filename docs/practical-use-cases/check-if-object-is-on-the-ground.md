@@ -1,4 +1,4 @@
-# Check if object is on the ground
+# Unity Ground Check - IsGrounded Detection
 
 Determine whether a character or prop is grounded so you can enable jumping, play landing VFX, or swap movement modes. A downward raycast from the object is a robust approach when paired with layer filtering.
 

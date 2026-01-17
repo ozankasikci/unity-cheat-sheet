@@ -1,4 +1,4 @@
-# Event Systems
+# Unity Events - UnityEvent and C# Delegates
 
 Unity provides several ways to handle events in your games. Here are the main approaches:
 

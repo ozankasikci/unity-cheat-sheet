@@ -1,4 +1,4 @@
-# Load next scene
+# Unity Load Scene - Scene Management Guide
 
 Advance to the next scene in the build index after completing a level or finishing a cutscene. Guard the call so it only loads when another scene exists to avoid index errors.
 

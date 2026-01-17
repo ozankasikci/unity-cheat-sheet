@@ -1,4 +1,4 @@
-# Layout
+# Unity Editor Layout Shortcuts
 
 ```
 CTRL/CMD + 1-5 - Switch between layouts

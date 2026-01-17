@@ -1,4 +1,4 @@
-# New Input System
+# Unity New Input System - Complete Guide
 
 The Input System package provides a modern, flexible way to handle player input across all platforms. It is the **standard for Unity 6** and recommended for all new projects.
 

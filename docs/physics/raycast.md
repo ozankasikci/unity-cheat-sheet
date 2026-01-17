@@ -1,4 +1,4 @@
-# Raycast
+# Unity Raycast - Physics Ray Detection
 
 Physics raycasts let you probe the world along a straight line to discover what you would hit. They are a foundational building block for many systems—targeting, line of sight, shooting, interaction prompts, AI perception, and more. Understanding the different overloads, hit data, and performance implications is key to writing reliable gameplay code.
 

@@ -1,4 +1,4 @@
-# Camera follow & orbit
+# Unity Camera Follow and Orbit - Third Person Camera
 
 Smoothly follow a target while allowing mouse or controller input to orbit around it. Combine `Vector3.SmoothDamp` for damped position tracking with `Quaternion.AngleAxis` to accumulate yaw and pitch angles.
 

@@ -1,4 +1,4 @@
-# Vector3
+# Unity Vector3 - 3D Vectors and Operations
 
 `Vector3` represents 3D positions and directions. Unity relies on it for coordinates, velocities, normals, and almost every spatial calculation. Master the helpers and operators so you can manipulate vectors quickly without reinventing common math.
 

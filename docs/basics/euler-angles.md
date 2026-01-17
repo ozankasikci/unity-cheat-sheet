@@ -1,4 +1,4 @@
-# Euler Angles
+# Unity Euler Angles - Rotation in Degrees
 
 Euler angles describe rotations with three ordered rotations (typically yaw, pitch, roll) expressed in degrees. Unity exposes them heavily in the Inspector, but under the hood it converts every change to quaternions. Treat Euler angles as a user-friendly façade: lean on them for authoring and quick edits, then hand off to quaternions for math-heavy work.
 

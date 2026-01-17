@@ -1,4 +1,4 @@
-# State Pattern
+# Unity State Pattern - Finite State Machines
 
 The State Pattern allows an object to alter its behavior when its internal state changes. It encapsulates state-specific behavior and makes state transitions explicit.
 

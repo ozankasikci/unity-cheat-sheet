@@ -1,4 +1,4 @@
-# Scene View Navigation
+# Unity Scene View Navigation Shortcuts
 
 ```
 Alt + Left Click - Orbit around scene view pivot

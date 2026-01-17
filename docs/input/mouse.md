@@ -1,4 +1,4 @@
-# Mouse
+# Unity Mouse Input - Legacy Input Manager
 
 > **Note:** This page covers the **Legacy Input Manager**. For Unity 6+ projects, see the [New Input System](new-input-system.md) which is now the standard.
 

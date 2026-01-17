@@ -1,4 +1,4 @@
-# Slider
+# Unity UI Slider - Value Change Events
 
 ```csharp
 // Slider is used for selecting a value within a range.

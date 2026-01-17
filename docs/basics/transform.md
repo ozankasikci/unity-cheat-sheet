@@ -1,4 +1,4 @@
-# Transform
+# Unity Transform - Position, Rotation and Scale
 
 Every GameObject in Unity has a `Transform` component. It stores the object’s position, rotation, and scale, but also defines parent-child hierarchies. Mastering transform math is essential for placing objects, moving characters, and aligning UI.
 

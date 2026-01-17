@@ -1,4 +1,4 @@
-# Get the transform of a body bone
+# Unity Get Bone Transform - Animator.GetBoneTransform
 
 Access a specific humanoid bone (e.g., head, hand, spine) to attach props, aim weapons, or read pose data. Unity’s Humanoid rig exposes these through `Animator.GetBoneTransform` once the avatar is initialized.
 

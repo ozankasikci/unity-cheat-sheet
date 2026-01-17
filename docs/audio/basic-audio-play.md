@@ -1,4 +1,4 @@
-# Basic Audio Play
+# Unity Audio - Play Sounds and Music
 
 ```csharp
 public class PlayAudio : MonoBehaviour {

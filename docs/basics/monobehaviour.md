@@ -1,4 +1,4 @@
-# MonoBehaviour
+# Unity MonoBehaviour - Lifecycle Methods and Events
 
 `MonoBehaviour` is the base class that gives Unity scripts their lifecycle hooks, inspector exposure, and access to coroutines. Almost every gameplay script you write will inherit from it, so knowing when Unity invokes each callback is crucial.
 

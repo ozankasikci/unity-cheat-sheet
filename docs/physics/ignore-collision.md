@@ -1,4 +1,4 @@
-# Ignore Collision
+# Unity Ignore Collision - Disable Physics Interactions
 
 Disable collision detection between specific colliders or entire layers.
 

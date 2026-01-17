@@ -1,4 +1,4 @@
-# Make object look at the camera
+# Unity Billboard - Make Object Look At Camera
 
 Keep UI elements or billboards facing the active camera so they remain legible and always visible. `Quaternion.LookRotation` re-orients the forward vector toward the camera while optionally locking a specific axis.
 
